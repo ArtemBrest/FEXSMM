@@ -284,7 +284,7 @@ window.addEventListener("load", function () {
         });
     }
 
-    const anchorLinks = (id) => {
+    /*const anchorLinks = (id) => {
         const point = document.querySelector(id);
         if (!point) return;
         point.scrollIntoView({
@@ -298,7 +298,7 @@ window.addEventListener("load", function () {
             const id = e.currentTarget.getAttribute("href");
             anchorLinks(id);
         })
-    );
+    );*/
 
     const modalOpenBtn = document.querySelectorAll(".modal-open-btn");
     const modalCloseBtn = document.querySelector(".modal__close");
