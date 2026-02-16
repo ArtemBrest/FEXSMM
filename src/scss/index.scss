@@ -299,6 +299,14 @@ button:hover {
   }
 }
 
+.mb-100 {
+  margin-bottom: 100px;
+
+  @media (max-width: 1024px) {
+    margin-bottom: 70px;
+  }
+}
+
 .button-up {
   display: flex;
   align-items: center;
@@ -2222,15 +2230,77 @@ button:hover {
 }
 
 .reviews {
+  $self: &;
+
   &__head {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 20px;
     margin-bottom: 40px;
 
     @media (max-width: 1024px) {
+      flex-wrap: wrap;
+      justify-content: space-between;
       margin-bottom: 32px;
     }
+
+    #{$self}__btn {
+      width: fit-content;
+      --button-main-y: 20px;
+      min-height: 58px;
+      margin-left: auto;
+
+      @media (max-width: 1024px) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: 24px;
+
+    @media (max-width: 1024px) {
+      width: 100%;
+      margin-left: 0;
+      order: 3;
+    }
+  }
+
+  &__mark {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    background-color: var(--color-text-inverse);
+    border-radius: 50em;
+  }
+
+  &__stars {
+    --yellow: #FFDB39;
+    --gray: #b1b1b1;
+
+    width: 100px;
+    height: 18px;
+
+    background-image: linear-gradient(
+        90deg,
+        var(--yellow) var(--rating),
+        var(--gray) 0
+    );
+    -webkit-mask: url("../img/svg/stars.svg") no-repeat center / contain;
+    mask: url("../img/svg/stars.svg") no-repeat center / contain;
+
+    @media (max-width: 1024px) {
+      height: 16px;
+      width: 88px;
+    }
+  }
+
+  &__count {
+    color: Hsla(var(--color-text-primary-hsl), 0.4);
   }
 
   &__btn-icon  {
@@ -2282,12 +2352,44 @@ button:hover {
     }
   }
 
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2,1fr);
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+  }
+
+  &__card {
+    width: 390px;
+
+    @media (max-width: 1024px) {
+      width: 260px;
+    }
+  }
+
+  &__more {
+    margin: 0 auto;
+    width: 390px;
+  }
+
   &__footer {
     display: none;
+    justify-content: center;
     margin-top: 22px;
 
     @media (max-width: 1024px) {
-      display: block;
+      display: flex;
     }
   }
 }
@@ -2295,14 +2397,12 @@ button:hover {
 .reviews-card {
   display: flex;
   flex-direction: column;
-  width: 390px;
   padding: 28px;
   background-color: var(--color-text-inverse);
   border-radius: var(--border-radius--size-xxl);
   box-shadow: 0 4px 20px 0 Hsla(var(--color-text-primary-hsl), 0.05);
 
   @media (max-width: 1024px) {
-    width: 260px;
     padding: 20px;
   }
 
