@@ -61,7 +61,6 @@ window.addEventListener("load", function () {
     }
 
     const quantityFields = document.querySelectorAll('.calc-quantity__field');
-
     if(!isEmptyObject(quantityFields)) {
         quantityFields.forEach((field) => {
             const input = field.querySelector('.calc-quantity__input');
@@ -110,6 +109,47 @@ window.addEventListener("load", function () {
         });
     }
 
+    const calcSelect =  document.querySelectorAll('.calc-select[data-select]');
+    if(!isEmptyObject(calcSelect)) {
+        calcSelect.forEach(select => {
+            const trigger = select.querySelector('[data-select-trigger]');
+            const valueBox = select.querySelector('[data-select-value]');
+            const radios = select.querySelectorAll('input[type="radio"]');
+
+            trigger.addEventListener('click', () => {
+                select.classList.toggle('calc-select--is-open');
+            });
+
+            radios.forEach(radio => {
+                radio.addEventListener('change', () => {
+                    const row = radio.closest('.calc-guarantee-option')
+                        .querySelector('.calc-guarantee-option__row');
+
+                    valueBox.innerHTML = row.innerHTML;
+                    select.classList.add('calc-select--is-filled');
+                    select.classList.remove('calc-select--is-open');
+                });
+            });
+
+            // если уже есть выбранный при загрузке
+            const checked = select.querySelector('input[type="radio"]:checked');
+            if (checked) {
+                const row = checked
+                    .closest('.calc-guarantee-option')
+                    .querySelector('.calc-guarantee-option__row');
+
+                valueBox.innerHTML = row.innerHTML;
+                select.classList.add('calc-select--filled');
+            }
+
+            // закрытие при клике вне
+            document.addEventListener('click', e => {
+                if (!select.contains(e.target)) {
+                    select.classList.remove('calc-select--is-open');
+                }
+            });
+        });
+    }
 
     const container = document.querySelector('.seo__description');
     const button = document.querySelector('.seo__btn');
@@ -144,9 +184,7 @@ window.addEventListener("load", function () {
         });
     }
 
-
     const reviewsRows = document.querySelectorAll('.reviews__row');
-
     if(!isEmptyObject(reviewsRows)) {
         reviewsRows.forEach(row => {
             const track = row.querySelector('.reviews__track');
@@ -185,7 +223,6 @@ window.addEventListener("load", function () {
     }
 
     const blogSwiper = document.querySelector(".blog__swiper");
-
     if(blogSwiper !== null) {
         new Swiper(blogSwiper, {
             slidesPerView: 'auto',
@@ -238,7 +275,7 @@ window.addEventListener("load", function () {
         initAcc(FAQ, false);
     }
 
-    const contactsBtn = document.querySelectorAll(".contacts-tabs__item");
+    /*const contactsBtn = document.querySelectorAll(".contacts-tabs__item");
     const contactsCards = document.querySelectorAll(".contacts__cards");
     if (!isEmptyObject(contactsCards) && !isEmptyObject(contactsBtn)) {
         for (let el of contactsBtn) {
@@ -257,7 +294,7 @@ window.addEventListener("load", function () {
                 panel[0].classList.add("contacts__cards--active");
             });
         }
-    }
+    }*/
 
     const scrollToTopBtn = document.querySelector(".button-up");
     if (scrollToTopBtn !== null) {
@@ -300,7 +337,7 @@ window.addEventListener("load", function () {
         })
     );*/
 
-    const modalOpenBtn = document.querySelectorAll(".modal-open-btn");
+    /*const modalOpenBtn = document.querySelectorAll(".modal-open-btn");
     const modalCloseBtn = document.querySelector(".modal__close");
     const modalFade = document.querySelector(".fade");
     const modal = document.querySelector(".modal");
@@ -326,12 +363,12 @@ window.addEventListener("load", function () {
         fadeOut(modalFade);
         fadeOut(modal);
         body.classList.remove("body--no-scroll");
-    });
+    });*/
 
-    const regexSubject = /^[а-яА-Яa-zA-ZЁёЫы0-9 .,!?:'"+_&@#*()-]{2,100}$/iu;
-    const regexPhone = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
+    /*const regexSubject = /^[а-яА-Яa-zA-ZЁёЫы0-9 .,!?:'"+_&@#*()-]{2,100}$/iu;
+    const regexPhone = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;*/
 
-    const forms = document.querySelectorAll("form");
+    /*const forms = document.querySelectorAll("form");
     if (!isEmptyObject(forms)) {
         document.querySelectorAll('input[name="phone"]').forEach(function (input) {
             IMask(input, {
@@ -423,5 +460,5 @@ window.addEventListener("load", function () {
                 }
             });
         })
-    }
+    }*/
 })
