@@ -275,26 +275,25 @@ window.addEventListener("load", function () {
         initAcc(FAQ, false);
     }
 
-    /*const contactsBtn = document.querySelectorAll(".contacts-tabs__item");
-    const contactsCards = document.querySelectorAll(".contacts__cards");
-    if (!isEmptyObject(contactsCards) && !isEmptyObject(contactsBtn)) {
-        for (let el of contactsBtn) {
+    const faqBtnTabs = document.querySelectorAll(".faq__tab");
+    const faqContentTabs = document.querySelectorAll(".faq__items");
+    if (!isEmptyObject(faqContentTabs) && !isEmptyObject(faqBtnTabs)) {
+        for (let el of faqBtnTabs) {
             el.addEventListener("click", e => {
                 e.preventDefault();
-                if (document.querySelector(".contacts-tabs__item.contacts-tabs__item--active")) {
-                    document.querySelector(".contacts-tabs__item.contacts-tabs__item--active").classList.remove("contacts-tabs__item--active");
+                if (document.querySelector(".faq__tab.faq__tab--is-active")) {
+                    document.querySelector(".faq__tab.faq__tab--is-active").classList.remove("faq__tab--is-active");
                 }
-                if (document.querySelector(".contacts__cards.contacts__cards--active")) {
-                    document.querySelector(".contacts__cards.contacts__cards--active").classList.remove("contacts__cards--active");
+                if (document.querySelector(".faq__items.faq__items--is-active")) {
+                    document.querySelector(".faq__items.faq__items--is-active").classList.remove("faq__items--is-active");
                 }
-                //const parentListItem = el.parentElement;
-                el.classList.add("contacts-tabs__item--active");
+                el.classList.add("faq__tab--is-active");
                 var index = [...el.parentElement.children].indexOf(el);
-                var panel = [...contactsCards].filter(el => el.getAttribute("data-index") == index);
-                panel[0].classList.add("contacts__cards--active");
+                var panel = [...faqContentTabs].filter(el => el.getAttribute("data-index") == index);
+                panel[0].classList.add("faq__items--is-active");
             });
         }
-    }*/
+    }
 
     const scrollToTopBtn = document.querySelector(".button-up");
     if (scrollToTopBtn !== null) {

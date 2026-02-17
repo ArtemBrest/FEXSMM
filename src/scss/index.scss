@@ -1083,25 +1083,25 @@ button:hover {
   transition: background-color 0.1s, border-color 0.1s;
 
   &--size-m {
-    width: 52px;
-    height: 52px;
+    min-width: 52px;
+    min-height: 52px;
 
     @media (max-width: 767px) {
-      width: 44px;
-      height: 44px;
+      min-width: 44px;
+      min-height: 44px;
     }
   }
 
   &--size-s {
-    width: 42px;
-    height: 42px;
+    min-width: 42px;
+    min-height: 42px;
   }
 
   &--has-background {
     background-color: var(--color-text-inverse);
   }
 
-  &:hover {
+  &[href]:hover {
     background-color: var(--color-bg-secondary);
     border-color: var(--color-accent-primary);
   }
@@ -1125,6 +1125,12 @@ button:hover {
         width: 24px;
         height: 24px;
       }
+    }
+  }
+
+  &__label {
+    @media (max-width: 1024px) {
+      display: none;
     }
   }
 }
@@ -2874,6 +2880,25 @@ button:hover {
       width: 260px;
     }
   }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__more {
+    margin: 40px auto 0;
+    width: 390px;
+  }
 }
 
 .blog-card {
@@ -2993,16 +3018,72 @@ button:hover {
     }
   }
 
-  &__title {
-    margin-bottom: 20px;
+  &__text {
+    color: var(--color-text-muted);
+    margin-top: 20px;
 
     @media (max-width: 1024px) {
-      margin-bottom: 18px;
+      margin-top: 18px;
     }
   }
 
-  &__text {
-    color: var(--color-text-muted);
+  &__tabs {
+    margin-bottom: 40px;
+    gap: 12px;
+
+    @media (max-width: 1024px) {
+      margin-bottom: 32px;
+      gap: 6px;
+    }
+  }
+
+  &__tab {
+    gap: 8px;
+    padding: 0 20px;
+    position: relative;
+
+    @media (max-width: 1024px) {
+      padding: 0;
+    }
+
+    .category-social-btn--size-m {
+      min-width: 48px;
+      min-height: 48px;
+
+      @media (max-width: 767px) {
+        min-width: 52px;
+        min-height: 52px;
+      }
+    }
+
+    &--is-active {
+      background-color: var(--color-bg-secondary);
+      border-color: var(--color-accent-primary);
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background-image: url("../img/svg/check-full.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+
+  &__wrapper {
+    .faq__items {
+      display: none;
+
+      &--is-active {
+        display: grid;
+      }
+    }
   }
 
   &__items {
@@ -3375,6 +3456,105 @@ button:hover {
         background-color: var(--color-accent-primary);
         color: var(--color-text-inverse);
       }
+    }
+  }
+}
+
+.feedback {
+  .container {
+    @media (max-width: 767px) {
+      padding: 0;
+    }
+  }
+
+  &__wrapper {
+    border-radius: var(--border-radius--size-xxl);
+    background-image: var(--gradient-primary-deep);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 330px;
+    padding-left: 80px;
+
+    @media (max-width: 1024px) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    @media (max-width: 767px) {
+      padding-top: 60px;
+      padding-bottom: 40px;
+      justify-content: flex-start;
+      min-height: 390px;
+      border-radius: 0;
+    }
+  }
+
+  &__info {
+    position: relative;
+    z-index: 50;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+    max-width: 470px;
+    color: var(--color-text-inverse);
+
+    @media (max-width: 1230px) {
+      max-width: 350px;
+    }
+
+    @media (max-width: 767px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text {
+    color: var(--color-text-inverse);
+
+    @media (max-width: 1230px) {
+      max-width: 350px;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 14px;
+      line-height: 14px;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    bottom: 0;
+    right: 5vw;
+
+    @media (max-width: 1230px) {
+      right: 20px;
+    }
+
+    @media (max-width: 767px) {
+      width: 360px;
+      height: 255px;
+      bottom: 0;
+      right: 0;
+    }
+
+    @media (max-width: 375px) {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__btn {
+    position: relative;
+    z-index: 50;
+    margin-top: 28px;
+    width: fit-content;
+
+    @media (max-width: 767px) {
+      margin-top: auto;
+      width: fit-content;
     }
   }
 }
