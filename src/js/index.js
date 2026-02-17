@@ -295,6 +295,72 @@ window.addEventListener("load", function () {
         }
     }
 
+    const singleContent = document.getElementById('single-page-content');
+    const introContainer = document.getElementById('single-page-intro-list');
+
+    if (singleContent !== null || introContainer !== null) {
+        const headings = singleContent.querySelectorAll('h2, h3');
+        if (!headings.length) return;
+
+        let headerIndex = 0;
+        let currentParentLi = null;
+
+        const rootOl = document.createElement('ol');
+        rootOl.className = 'single-page-intro__list';
+
+        headings.forEach((heading) => {
+            headerIndex++;
+            const id = `section-${headerIndex}`;
+            heading.id = id;
+
+            const link = document.createElement('a');
+            link.href = `#${id}`;
+            link.textContent = heading.textContent.trim();
+            link.className = `single-page-intro__link single-page-intro__link--${heading.tagName.toLowerCase()}`;
+
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                const headerHeight =
+                    document.querySelector('.main-header')?.offsetHeight || 0;
+
+                const y =
+                    heading.getBoundingClientRect().top +
+                    window.pageYOffset -
+                    headerHeight -
+                    24;
+
+                window.scrollTo({
+                    top: y,
+                    behavior: 'smooth',
+                });
+            });
+
+            const li = document.createElement('li');
+            li.className = 'single-page-intro__item';
+            li.appendChild(link);
+
+            if (heading.tagName === 'H2') {
+                rootOl.appendChild(li);
+                currentParentLi = li;
+            }
+
+            if (heading.tagName === 'H3' && currentParentLi) {
+                let subUl = currentParentLi.querySelector('ul');
+
+                if (!subUl) {
+                    subUl = document.createElement('ul');
+                    subUl.className = 'single-page-intro__sublist';
+                    currentParentLi.appendChild(subUl);
+                }
+
+                subUl.appendChild(li);
+            }
+        });
+
+        introContainer.appendChild(rootOl);
+    }
+
     const scrollToTopBtn = document.querySelector(".button-up");
     if (scrollToTopBtn !== null) {
         document.addEventListener("scroll", handleScroll);

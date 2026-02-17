@@ -549,13 +549,8 @@ button:hover {
 
 .cms-description-text {
   & > * {
-    margin-top: 15px;
-    margin-bottom: 15px;
-
-    @media (max-width: 1024px){
-      margin-top: 12px;
-      margin-bottom: 12px;
-    }
+    margin-top: 24px;
+    margin-bottom: 24px;
   }
 
   & > *:first-child {
@@ -566,7 +561,34 @@ button:hover {
     margin-bottom: 0 !important;
   }
 
+  h2 {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 28px;
+    margin-top: 60px;
+
+    @media (max-width: 1024px) {
+      margin-top: 32px;
+      font-size: 24px;
+      line-height: 24px;
+    }
+  }
+
+  h3 {
+    margin-top: 60px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+
+    @media (max-width: 1024px) {
+      margin-top: 32px;
+      font-size: 20px;
+      line-height: 20px;
+    }
+  }
+
   p {
+    font-weight: 500;
     font-size: 20px;
     line-height: 20px;
     color: var(--color-text-muted);
@@ -574,6 +596,14 @@ button:hover {
     @media (max-width: 1024px){
       font-size: 16px;
       line-height: 16px;
+    }
+  }
+
+  a {
+    @media (min-width: 767px) {
+      &:hover {
+        color: var(--color-accent-primary);
+      }
     }
   }
 
@@ -585,13 +615,12 @@ button:hover {
       font-weight: 500;
       font-size: 20px;
       line-height: 20px;
-      margin-bottom: 15px;
+      margin-bottom: 24px;
       color: var(--color-text-muted);
 
       @media (max-width: 1024px){
         font-size: 16px;
         line-height: 16px;
-        margin-bottom: 12px;
       }
 
       &:last-child {
@@ -613,28 +642,22 @@ button:hover {
   }
 
   ol {
+    list-style-type: none;
     padding: 0;
+    margin-left: 0;
+    margin-right: 0;
     counter-reset: myCounter;
-    margin: 30px 0;
-    color: var(--color-text-muted);
-
-    @media (max-width: 1024px){
-      margin: 20px 0;
-    }
 
     li {
-      position: relative;
-      font-weight: 400;
+      font-weight: 500;
       font-size: 20px;
       line-height: 20px;
-      gap: 10px;
-      margin-bottom: 15px;
-      padding-left: 35px;
+      margin-bottom: 8px;
+      color: var(--color-text-muted);
 
       @media (max-width: 1024px){
         font-size: 16px;
         line-height: 16px;
-        margin-bottom: 12px;
       }
 
       &:last-child {
@@ -643,19 +666,16 @@ button:hover {
 
       &:before {
         counter-increment: myCounter;
-        content: counter(myCounter);
-        position: absolute;
-        top: -3px;
-        left: 0;
-        display: block;
-        width: 25px;
-        height: 25px;
-        flex-shrink: 0;
-        border-radius: 50%;
-        text-align: center;
+        content: counter(myCounter)".";
         font-weight: 700;
-        font-size: 14px;
-        line-height: 25px;
+        font-size: 20px;
+        line-height: 20px;
+        padding-right: 10px;
+
+        @media (max-width: 1024px){
+          font-size: 16px;
+          line-height: 16px;
+        }
       }
     }
   }
@@ -3555,6 +3575,176 @@ button:hover {
     @media (max-width: 767px) {
       margin-top: auto;
       width: fit-content;
+    }
+  }
+}
+
+.single-page {
+  &__wrapper {
+    display: grid;
+    gap: 80px;
+
+    @media (max-width: 1024px) {
+      gap: 70px;
+    }
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
+
+    @media (max-width: 1024px) {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__date {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    color: #B1B1B1;
+    margin-bottom: 16px;
+
+    @media (max-width: 1024px) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__date-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  &__picture {
+    overflow: hidden;
+    border-radius: var(--border-radius--size-xxl);
+
+    @media (max-width: 1024px) {
+      border-radius: var(--border-radius--size-xl);
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: inherit;
+  }
+
+  &__content {
+    @media (max-width: 1024px){
+      p {
+        font-size: 18px;
+        line-height: 18px;
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    &--disabled {
+      cursor: default;
+      opacity: 0.2;
+    }
+
+    &-ico {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      border: 2px solid var(--color-accent-primary);
+      color: var(--color-accent-primary);
+
+      svg {
+        width: 19px;
+        height: 13px;
+      }
+    }
+
+    &-label {
+      color: var(--color-accent-primary);
+    }
+  }
+}
+
+.single-page-intro {
+  padding: 40px;
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--border-radius--size-xxl);
+
+  @media (max-width: 1024px) {
+    padding: 48px 28px;
+  }
+
+  &__title {
+    color: var(--color-accent-primary);
+    margin-bottom: 24px;
+  }
+
+  &__content {
+    ol {
+      list-style-type: none;
+      padding: 0;
+      counter-reset: myCounter;
+      color: var(--color-text-muted);
+
+      li {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 20px;
+        margin-bottom: 8px;
+
+        @media (max-width: 1024px){
+          font-size: 16px;
+          line-height: 16px;
+        }
+
+        &:last-child {
+          margin: 0;
+        }
+
+        &:before {
+          counter-increment: myCounter;
+          content: counter(myCounter)".";
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 20px;
+          padding-right: 10px;
+
+          @media (max-width: 1024px){
+            font-size: 16px;
+            line-height: 16px;
+          }
+        }
+      }
+    }
+
+    a {
+      @media (min-width: 767px) {
+        &:hover {
+          color: var(--color-accent-primary);
+        }
+      }
     }
   }
 }
