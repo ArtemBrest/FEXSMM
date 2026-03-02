@@ -151,6 +151,21 @@ window.addEventListener("load", function () {
         });
     }
 
+    const calcFeedCheckbox = document.querySelector('.calc-feed__input');
+    const calcFeedWrapper = document.querySelector('.calc-feed__wrapper');
+
+    if (calcFeedCheckbox  !== null && calcFeedWrapper  !== null){
+        const toggleWrapper = () => {
+            if (calcFeedCheckbox.checked) {
+                fadeIn(calcFeedWrapper, 'flex');
+            } else {
+                fadeOut(calcFeedWrapper);
+            }
+        };
+        toggleWrapper();
+        calcFeedCheckbox.addEventListener('change', toggleWrapper);
+    }
+
     const container = document.querySelector('.seo__description');
     const button = document.querySelector('.seo__btn');
     const buttonText = button?.querySelector('.seo__btn-text');

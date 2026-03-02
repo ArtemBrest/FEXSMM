@@ -323,6 +323,80 @@
                     </div>
                 </div>
             </div>
+            <div class="calc__feed calc-feed">
+                <div class="calc-feed__head">
+                    <label class="calc-feed-option">
+                        <input type="checkbox" name="feed" checked class="calc-feed__input">
+                        <span class="calc-feed-option__check">
+                            <img src="../img/svg/check.svg" alt="">
+                        </span>
+                        <span class="calc-feed-option__info">
+                            <span class="calc-feed-option__title ui-text ui-text--weight-700 ui-text--size-s">Постепенная подача</span>
+                            <span class="calc-feed-option__text ui-text ui-text--weight-500 ui-text--size-xs">Равномерное распределение выполнения заказа по времени</span>
+                        </span>
+                    </label>
+                </div>
+                <div class="calc-feed__wrapper">
+                    <div class="calc-feed__item calc-quantity">
+                        <p class="calc__title ui-text ui-text--weight-500 ui-text--uppercase ui-text--size-xs">Количество запусков</p>
+                        <div class="calc-quantity__field">
+                            <input type="number" name="quantity" min="1" max="1000" step="1" inputmode="numeric" placeholder="Введите количество" class="calc-quantity__input ui-text ui-text--weight-500 ui-text--size-s" />
+                            <div class="calc-quantity__controls">
+                                <button class="calc-quantity__btn calc-quantity__btn--plus">
+                                    <svg class="calc-quantity__btn-ico">
+                                        <use xlink:href="./img/sprites.svg#icon-add"></use>
+                                    </svg>
+                                </button>
+                                <button class="calc-quantity__btn calc-quantity__btn--minus" disabled>
+                                    <svg class="calc-quantity__btn-ico">
+                                        <use xlink:href="./img/sprites.svg#icon-remove"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calc-feed__item calc-quantity">
+                        <p class="calc__title ui-text ui-text--weight-500 ui-text--uppercase ui-text--size-xs">Интервал в минутах</p>
+                        <div class="calc-quantity__field">
+                            <input type="number" name="quantity" min="1" max="1000" step="1" inputmode="numeric" placeholder="Введите количество" class="calc-quantity__input ui-text ui-text--weight-500 ui-text--size-s" />
+                            <div class="calc-quantity__controls">
+                                <button class="calc-quantity__btn calc-quantity__btn--plus">
+                                    <svg class="calc-quantity__btn-ico">
+                                        <use xlink:href="./img/sprites.svg#icon-add"></use>
+                                    </svg>
+                                </button>
+                                <button class="calc-quantity__btn calc-quantity__btn--minus" disabled>
+                                    <svg class="calc-quantity__btn-ico">
+                                        <use xlink:href="./img/sprites.svg#icon-remove"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calc-feed__item calc-feed__item--is-counter calc-quantity calc-quantity--is-counter">
+                        <p class="calc__title ui-text ui-text--weight-500 ui-text--uppercase ui-text--size-xs">Количество на пост</p>
+                        <div class="calc-quantity__row">
+                            <div class="calc-quantity__field">
+                                <div class="calc-quantity__controls">
+                                    <button class="calc-quantity__btn calc-quantity__btn--plus">
+                                        <svg class="calc-quantity__btn-ico">
+                                            <use xlink:href="./img/sprites.svg#icon-add"></use>
+                                        </svg>
+                                    </button>
+                                    <input type="number" name="quantity" value="1" min="1" max="100" step="1" inputmode="numeric" placeholder="1" class="calc-quantity__input ui-text ui-text--weight-500 ui-text--size-s" />
+                                    <button class="calc-quantity__btn calc-quantity__btn--minus" disabled>
+                                        <svg class="calc-quantity__btn-ico">
+                                            <use xlink:href="./img/sprites.svg#icon-remove"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <span class="calc-quantity__separator ui-text ui-text--weight-500 ui-text--size-m">=</span>
+                            <span class="calc-quantity__total ui-text ui-text--weight-700 ui-text--size-l">0.000 $</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="calc__summary calc-summary">
                 <div class="calc-summary__wrapper">
                     <div class="calc-summary__row">
