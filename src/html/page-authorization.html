@@ -1,0 +1,64 @@
+@@include('./common/header.html')
+<section class="auth">
+    <div class="container">
+        <div class="auth__wrapper">
+            <form class="auth__form auth-form">
+                <div class="auth-form__head">
+                    <h1 class="auth-form__title ui-text ui-text--weight-700 ui-text--size-xxl">Авторизация</h1>
+                    <p class="auth-form__text ui-text ui-text--weight-500 ui-text--size-s">Заполните поля ввода, чтобы войти в свой аккаунт</p>
+                </div>
+                <div class="auth-form__wrapper">
+                    <div class="auth-form__item">
+                        <label for="auth-login" class="auth-form__label ui-text ui-text--uppercase ui-text--weight-500 ui-text--size-xxxs">Email / Имя пользователя</label>
+                        <input name="login" type="text" id="auth-login" placeholder="Username" class="auth-form__input ui-text ui-text--weight-500 ui-text--size-xs">
+                        <div class="auth-form__icon">
+                            <svg>
+                                <use xlink:href="./img/sprites.svg#icon-check-v2"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="auth-form__item">
+                        <label for="register-password" class="auth-form__label ui-text ui-text--uppercase ui-text--weight-500 ui-text--size-xxxs">Пароль</label>
+                        <input name="password" type="password" id="register-password" class="auth-form__input ui-text ui-text--weight-500 ui-text--size-xs">
+                        <a href="#" class="auth-form__forgot ui-text ui-text--weight-500 ui-text--size-xxs">Забыли пароль?</a>
+                        <div class="auth-form__visible">
+                            <svg>
+                                <use xlink:href="./img/sprites.svg#icon-eye"></use>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <label class="auth-form-accept">
+                        <input type="checkbox" name="remember" class="auth-form-accept__input">
+                        <span class="auth-form-accept__check">
+                            <img src="../img/svg/check.svg" alt="">
+                        </span>
+                        <span class="auth-form-accept__text ui-text ui-text--weight-500 ui-text--size-xxs">Запомнить</span>
+                    </label>
+
+                    <button class="auth-form__btn button-main button-main--theme-primary">
+                        <span>Авторизоваться</span>
+                    </button>
+                </div>
+
+                <div class="auth-form__divider">
+                    <p class="ui-text ui-text--weight-500 ui-text--size-s">Или зарегистрироваться через</p>
+                </div>
+
+                <div class="auth-form__socials">
+                    <a href="#" class="auth-form-social">
+                        <img src="/img/png/google.png" alt="google" width="24" height="24" class="auth-form-social__logo">
+                        <span class="auth-form-social__name ui-text ui-text--weight-500 ui-text--size-xs">Google</span>
+                    </a>
+                    <a href="#" class="auth-form-social">
+                        <img src="/img/png/telegram.png" alt="Телеграм" width="24" height="24" class="auth-form-social__logo">
+                        <span class="auth-form-social__name ui-text ui-text--weight-500 ui-text--size-xs">Телеграм</span>
+                    </a>
+                </div>
+
+                <p class="auth-form__footer ui-text ui-text--weight-700 ui-text--size-s">Уже есть аккаунт? <span class="ui-text--weight-500">Авторизация</span> <a href="#">тут</a></p>
+            </form>
+        </div>
+    </div>
+</section>
+@@include('./common/footer.html')

@@ -1,7 +1,7 @@
 <!--
 Add to HTML Code
 <svg>
-    <use xlink:href="./img/sprites.svg#icon-target"></use>
+    <use xlink:href="./img/sprites.svg#icon-eye"></use>
 </svg>
 -->
 <svg>
@@ -90,5 +90,9 @@ Add to HTML Code
     <symbol id="icon-order" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 32 32">
         <path stroke="currentColor" stroke-width="2.67" d="M22.67 5.33H9.33A2.67 2.67 0 0 0 6.67 8v17.33c0 1.48 1.19 2.67 2.66 2.67h13.34c1.47 0 2.66-1.2 2.66-2.67V8c0-1.47-1.2-2.67-2.66-2.67Z"/>
         <path stroke="currentColor" stroke-linecap="round" stroke-width="2.67" d="M12 12h8m-8 5.33h8m-8 5.34h5.33"/>
+    </symbol>
+    <symbol id="icon-eye" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 32 32">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 17.33a13 13 0 0 1 24 0"/>
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 22.67a4 4 0 1 1 0-8 4 4 0 0 1 0 8"/>
     </symbol>
 </svg>

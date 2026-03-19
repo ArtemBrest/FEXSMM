@@ -445,100 +445,59 @@ window.addEventListener("load", function () {
         body.classList.remove("body--no-scroll");
     });*/
 
-    /*const regexSubject = /^[а-яА-Яa-zA-ZЁёЫы0-9 .,!?:'"+_&@#*()-]{2,100}$/iu;
-    const regexPhone = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;*/
 
-    /*const forms = document.querySelectorAll("form");
-    if (!isEmptyObject(forms)) {
-        document.querySelectorAll('input[name="phone"]').forEach(function (input) {
-            IMask(input, {
-                mask: '+{7} (000) 000-00-00'
-            })
-        })
-        document.querySelectorAll('input[name="name"]').forEach(function (input) {
-            IMask(input, {
-                mask: /^[A-Za-zА-Яа-яЁё]*$/
+    const passwordToggles = document.querySelectorAll('.auth-form__visible');
+    if (!isEmptyObject(passwordToggles)) {
+        passwordToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const input = toggle.parentElement.querySelector('input');
+
+                if (!input) return;
+
+                input.type = input.type === 'password' ? 'text' : 'password';
+                toggle.classList.toggle('auth-form__visible-is-active');
             });
         });
-        let inputName, inputPhone;
-        forms.forEach(function (form) {
-            form.addEventListener('keyup', () => {
-                if (form.classList.contains("feedback-form")) {
-                    inputName = form.querySelector('.feedback-form__input--name');
-                    inputPhone = form.querySelector('.feedback-form__input--phone');
-                } else {
-                    inputName = form.querySelector('.modal-form__input--name');
-                    inputPhone = form.querySelector('.modal-form__input--phone');
-                }
+    }
 
-                if (inputName !== null) {
-                    if (regexSubject.test(inputName.value)) {
-                        inputName.classList.remove("error");
-                        inputName.classList.add("valid");
-                    } else {
-                        inputName.classList.remove("valid");
-                        inputName.classList.add("error");
-                    }
-                }
-                if (inputPhone !== null) {
-                    if (regexPhone.test(inputPhone.value)) {
-                        inputPhone.classList.remove("error");
-                        inputPhone.classList.add("valid");
-                    } else {
-                        inputPhone.classList.remove("valid");
-                        inputPhone.classList.add("error");
-                    }
-                }
-            });
-            form.addEventListener('submit', (event) => {
-                event.preventDefault();
-                if (form.classList.contains("feedback-form")) {
-                    inputName = form.querySelector('.feedback-form__input--name');
-                    inputPhone = form.querySelector('.feedback-form__input--phone');
-                } else {
-                    inputName = form.querySelector('.modal-form__input--name');
-                    inputPhone = form.querySelector('.modal-form__input--phone');
-                }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const usernameRegex = /^[a-zA-Z0-9_]{3,}$/;
 
-                let validInput = true;
-                if (inputName.value === "" || inputPhone.value === "") {
-                    inputPhone.classList.add("error");
-                    inputName.classList.add("error");
-                    validInput = false;
-                } else {
-                    inputName.classList.remove("error");
-                    inputPhone.classList.remove("error");
-                }
+    const registerNameInput = document.querySelector('#register-name');
+    if(registerNameInput !== null) {
+        registerNameInput.addEventListener('input', () => {
+            if (registerNameInput.value.trim().length >= 2) {
+                registerNameInput.classList.add('auth-form__input--is-valid');
+            } else {
+                registerNameInput.classList.remove('auth-form__input--is-valid');
+            }
+        });
+    }
 
-                if (validInput === true) {
-                    let data = new FormData(form);
-                    data.append('action', 'form_submit');
-                    const ajax = async () => {
-                        const response = await fetch('/wp-admin/admin-ajax.php', {
-                            method: 'POST',
-                            body: data
-                        });
-                        if (!response.ok) {
-                            throw new Error(response.status);
-                        } else {
-                            const data = await response.text();
-                            switch (data) {
-                                case '0':
-                                    console.log("Извините, произошла ошибка. Пожалуйста, повторите отправку позже!")
-                                    break;
-                                case '1':
-                                    fadeOut(modalFade);
-                                    fadeOut(modal);
-                                    body.classList.remove("body--no-scroll");
-                            }
-                        }
-                    };
-                    ajax()
-                    inputName.classList.remove("valid");
-                    inputPhone.classList.remove("valid");
-                    form.reset();
-                }
-            });
-        })
-    }*/
+    const registerEmailInput = document.querySelector('#register-email');
+    if(registerEmailInput !== null) {
+        registerEmailInput.addEventListener('input', () => {
+            if (emailRegex.test(registerEmailInput.value.trim())) {
+                registerEmailInput.classList.add('auth-form__input--is-valid');
+            } else {
+                registerEmailInput.classList.remove('auth-form__input--is-valid');
+            }
+        });
+    }
+
+    const authLoginInput = document.querySelector('#auth-login');
+    const validateLogin = (value) => {
+        const v = value.trim();
+        return emailRegex.test(v) || usernameRegex.test(v);
+    };
+
+    if(authLoginInput !== null) {
+        authLoginInput.addEventListener('input', () => {
+            if (validateLogin(authLoginInput.value)) {
+                authLoginInput.classList.add('auth-form__input--is-valid');
+            } else {
+                authLoginInput.classList.remove('auth-form__input--is-valid');
+            }
+        });
+    }
 })
