@@ -122,8 +122,7 @@ window.addEventListener("load", function () {
 
             radios.forEach(radio => {
                 radio.addEventListener('change', () => {
-                    const row = radio.closest('.calc-guarantee-option')
-                        .querySelector('.calc-guarantee-option__row');
+                    const row = radio.parentNode.querySelector('[data-select-row]');
 
                     valueBox.innerHTML = row.innerHTML;
                     select.classList.add('calc-select--is-filled');
@@ -134,9 +133,7 @@ window.addEventListener("load", function () {
             // если уже есть выбранный при загрузке
             const checked = select.querySelector('input[type="radio"]:checked');
             if (checked) {
-                const row = checked
-                    .closest('.calc-guarantee-option')
-                    .querySelector('.calc-guarantee-option__row');
+                const row = checked.parentNode.querySelector('[data-select-row]');
 
                 valueBox.innerHTML = row.innerHTML;
                 select.classList.add('calc-select--filled');
@@ -151,19 +148,26 @@ window.addEventListener("load", function () {
         });
     }
 
-    const calcFeedCheckbox = document.querySelector('.calc-feed__input');
-    const calcFeedWrapper = document.querySelector('.calc-feed__wrapper');
+    const calcFeeds = document.querySelectorAll('.calc-feed');
 
-    if (calcFeedCheckbox  !== null && calcFeedWrapper  !== null){
-        const toggleWrapper = () => {
-            if (calcFeedCheckbox.checked) {
-                fadeIn(calcFeedWrapper, 'flex');
-            } else {
-                fadeOut(calcFeedWrapper);
-            }
-        };
-        toggleWrapper();
-        calcFeedCheckbox.addEventListener('change', toggleWrapper);
+    if(!isEmptyObject(calcFeeds)) {
+        calcFeeds.forEach(feed => {
+            const checkbox = feed.querySelector('.calc-feed__input');
+            const wrapper = feed.querySelector('.calc-feed__wrapper');
+
+            if (!checkbox || !wrapper) return;
+
+            const toggleWrapper = () => {
+                if (checkbox.checked) {
+                    fadeIn(wrapper, 'flex');
+                } else {
+                    fadeOut(wrapper);
+                }
+            };
+
+            toggleWrapper();
+            checkbox.addEventListener('change', toggleWrapper);
+        });
     }
 
     const container = document.querySelector('.seo__description');
@@ -498,6 +502,60 @@ window.addEventListener("load", function () {
             } else {
                 authLoginInput.classList.remove('auth-form__input--is-valid');
             }
+        });
+    }
+
+    const accountSelect = document.querySelectorAll('.account-select');
+    if (!isEmptyObject(accountSelect)) {
+        accountSelect.forEach(select => {
+            const field = select.querySelector('.account-select__field');
+            const value = select.querySelector('.account-select__value');
+            const wrapper = select.querySelector('.account-select__wrapper');
+            const items = select.querySelectorAll('.account-select__item');
+
+            field.addEventListener('click', (e) => {
+                e.stopPropagation();
+
+                const isOpen = select.classList.contains('is-open');
+
+                // закрыть все остальные
+                document.querySelectorAll('.account-select').forEach(s => {
+                    if (s !== select) {
+                        s.classList.remove('account-select--is-open');
+                        const w = s.querySelector('.account-select__wrapper');
+                        fadeOut(w);
+                    }
+                });
+
+                if (isOpen) {
+                    select.classList.remove('account-select--is-open');
+                    fadeOut(wrapper);
+                } else {
+                    select.classList.add('account-select--is-open');
+                    fadeIn(wrapper);
+                }
+            });
+
+            items.forEach(item => {
+                item.addEventListener('click', () => {
+                    value.textContent = item.textContent;
+
+                    items.forEach(i => i.classList.remove('account-select__item--is-active'));
+                    item.classList.add('account-select__item--is-active');
+
+                    select.classList.remove('account-select--is-open');
+                    fadeOut(wrapper);
+                });
+            });
+        });
+
+        // клик вне
+        document.addEventListener('click', () => {
+            accountSelect.forEach(select => {
+                select.classList.remove('account-select--is-open');
+                const wrapper = select.querySelector('.account-select__wrapper');
+                fadeOut(wrapper);
+            });
         });
     }
 })

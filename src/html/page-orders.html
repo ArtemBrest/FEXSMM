@@ -1,0 +1,548 @@
+@@include('./common/header.html')
+<section class="account mb-100">
+    <div class="container">
+        <div class="account__wrapper">
+            <aside class="account__aside account-aside">
+                <div class="account__wallet account-wallet">
+                    <div class="account-wallet__box">
+                        <svg class="account-wallet__icon">
+                            <use xlink:href="./img/sprites.svg#icon-wallet"></use>
+                        </svg>
+                    </div>
+                    <div class="account-wallet__info">
+                        <span class="account-wallet__title ui-text ui-text--weight-500 ui-text--size-xs">Баланс</span>
+                        <span class="account-wallet__balance ui-text--weight-700 ui-text--size-l">199.99 $</span>
+                    </div>
+                    <button class="account-wallet__deposit">
+                        <svg class="account-wallet__deposit-ico">
+                            <use xlink:href="./img/sprites.svg#icon-add"></use>
+                        </svg>
+                    </button>
+                </div>
+                <button class="account__order button-main button-main--theme-primary">
+                    <svg width="12" height="12">
+                        <use xlink:href="./img/sprites.svg#icon-add"></use>
+                    </svg>
+                    <span class="ui-text ui-text--weight-700 ui-text--size-xs">создать заказ</span>
+                </button>
+                <div class="account__group">
+                    <ul class="account__menu account-menu">
+                        <li class="account-menu__li account-menu__li--is-active">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-order"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Мои
+                                заказы</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-reload"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link  ui-text ui-text--weight-500 ui-text--size-s">Автоуслуги</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-list-details"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Интервальные
+                                заказы</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-list-details"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Постепенные
+                                заказы</a>
+                        </li>
+                    </ul>
+                    <div class="account__separator"></div>
+                    <ul class="account__menu account-menu">
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-referral"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Реф.
+                                программа</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-notifications"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Центр
+                                уведомлений</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-history"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">История
+                                баланса</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-settings"></use>
+                                </svg>
+                            </div>
+                            <a href="#"
+                               class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Настройки</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-support"></use>
+                                </svg>
+                            </div>
+                            <a href="#"
+                               class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Поддержка</a>
+                        </li>
+                    </ul>
+                    <div class="account__separator"></div>
+                    <ul class="account__menu account-menu">
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-logout"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Выйти</a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <div class="account__content">
+                <div class="account__head">
+                    <h1 class="account__title ui-text ui-text--weight-700 ui-text--size-xxl">Мои заказы</h1>
+                    <div class="account__filter">
+                        <div class="account__select account-select">
+                            <div class="account-select__field">
+                                <span class="account-select__value ui-text ui-text--weight-500 ui-text--size-s">ID</span>
+                                <svg class="account-select__icon" width="12" height="12">
+                                    <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                                </svg>
+                            </div>
+                            <div class="account-select__wrapper">
+                                <ul class="account-select__list">
+                                    <li class="account-select__item ui-text ui-text--weight-500 ui-text--size-s account-select__item--is-active">
+                                        ID
+                                    </li>
+                                    <li class="account-select__item ui-text ui-text--weight-500 ui-text--size-s">Name
+                                    </li>
+                                    <li class="account-select__item ui-text ui-text--weight-500 ui-text--size-s">Date
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="account__search account-search">
+                            <input type="text" name="search" placeholder="Введите значение"
+                                   class="account-search__field ui-text ui-text--weight-500 ui-text--size-s">
+                            <button class="account-search__btn">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-search"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="account-order">
+                    <div class="account-order__sort account-order-sort">
+                        <p class="account-order-sort__title ui-text ui-text--weight-500 ui-text--size-xs">Сортировка по
+                            статусу:</p>
+                        <div class="account-order-sort__list">
+                            <button class="account-order-sort__item ui-text ui-text--weight-500 ui-text--size-xxs account-order-sort__item--is-active">
+                                <span class="account-order-sort__ico">✅</span>
+                                <span class="account-order-sort__name">Завершено:</span>
+                                <span class="account-order-sort__count ui-text ui-text--weight-700">100</span>
+                            </button>
+                            <button class="account-order-sort__item ui-text ui-text--weight-500 ui-text--size-xxs">
+                                <span class="account-order-sort__ico">🔄</span>
+                                <span class="account-order-sort__name">В процессе:</span>
+                                <span class="account-order-sort__count ui-text ui-text--weight-700">20</span>
+                            </button>
+                            <button class="account-order-sort__item ui-text ui-text--weight-500 ui-text--size-xxs">
+                                <span class="account-order-sort__ico">🌓</span>
+                                <span class="account-order-sort__name">Частично:</span>
+                                <span class="account-order-sort__count ui-text ui-text--weight-700">4</span>
+                            </button>
+                            <button class="account-order-sort__item ui-text ui-text--weight-500 ui-text--size-xxs">
+                                <span class="account-order-sort__ico">⏳</span>
+                                <span class="account-order-sort__name">В ожидании:</span>
+                                <span class="account-order-sort__count ui-text ui-text--weight-700">0</span>
+                            </button>
+                            <button class="account-order-sort__item ui-text ui-text--weight-500 ui-text--size-xxs">
+                                <span class="account-order-sort__ico">❌</span>
+                                <span class="account-order-sort__name">Отменено:</span>
+                                <span class="account-order-sort__count ui-text ui-text--weight-700">373</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="account-order__list">
+                        <div class="account-order-item">
+                            <div class="account-order-item__head" id="account-order-item-head-index-0">
+                                <div class="account-order-item__data"
+                                     data-da="#account-order-item-footer-index-0,1231,0">
+                                    <p class="account-order-item__id ui-text ui-text--weight-500 ui-text--size-xs">
+                                        ID: <span class="ui-text ui-text--weight-700">00002</span>
+                                    </p>
+                                    <p class="account-order-item__date ui-text ui-text--weight-500 ui-text--size-xs">
+                                        17.02. 14:00</p>
+                                </div>
+                                <div class="account-order-item__info">
+                                    <div class="account-order-item__title">
+                                        <img src="../img/png/telegram.png" alt="telegram"
+                                             class="account-order-item__img" width="16" height="16">
+                                        <span class="account-order-item__name ui-text ui-text--weight-500 ui-text--size-xs">Реакция:</span>
+                                        <span class="account-order-item__emoji ui-text ui-text--weight-500 ui-text--size-xs">👍</span>
+                                    </div>
+                                    <a href="https://t.me/username/1000"
+                                       class="account-order-item__link ui-text ui-text--weight-500 ui-text--size-xs">https://t.me/username/1000</a>
+                                </div>
+                            </div>
+                            <div class="account-order-item__main">
+                                <div class="account-order-item__price">
+                                    <p class="account-order-item__count ui-text ui-text--weight-700 ui-text--size-xs">
+                                        1000</p>
+                                    <p class="account-order-item__value ui-text ui-text--weight-500 ui-text--size-xs">
+                                        $0.0042/шт.</p>
+                                </div>
+                                <div class="account-order-item__progress account-order-item-progress">
+                                    <div class="account-order-item-progress__bar"
+                                         style="--account-order-item-progress-line: 90%">
+                                        <div class="account-order-item-progress__line"></div>
+                                    </div>
+                                    <div class="account-order-item-progress__row">
+                                        <p class="account-order-item-progress__title ui-text ui-text--weight-500 ui-text--size-xs">
+                                            Выполнено:</p>
+                                        <p class="account-order-item-progress__value ui-text ui-text--weight-500 ui-text--size-xs">
+                                            <span>900</span> / 1000</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account-order-item__footer" id="account-order-item-footer-index-0">
+                                <div class="account-order-item__status account-order-item__status--progress ui-text ui-text--weight-500 ui-text--size-xxs"
+                                     data-da="#account-order-item-head-index-0,1231,2">
+                                    <span>🔄</span>
+                                    <span>В процессе</span>
+                                </div>
+                                <div class="account-order-item__actions">
+                                    <button class="account-order-item__btn">
+                                        <svg width="20" height="20" class="account-order-item__btn-ico">
+                                            <use xlink:href="./img/sprites.svg#icon-help"></use>
+                                        </svg>
+                                    </button>
+                                    <button class="account-order-item__btn">
+                                        <svg width="20" height="20" class="account-order-item__btn-ico">
+                                            <use xlink:href="./img/sprites.svg#icon-repeat"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="account-order-item">
+                            <div class="account-order-item__head" id="account-order-item-head-index-1">
+                                <div class="account-order-item__data"
+                                     data-da="#account-order-item-footer-index-1,1231,0">
+                                    <p class="account-order-item__id ui-text ui-text--weight-500 ui-text--size-xs">
+                                        ID: <span class="ui-text ui-text--weight-700">00004</span>
+                                    </p>
+                                    <p class="account-order-item__date ui-text ui-text--weight-500 ui-text--size-xs">
+                                        17.02. 14:00</p>
+                                </div>
+                                <div class="account-order-item__info">
+                                    <div class="account-order-item__title">
+                                        <img src="../img/png/telegram.png" alt="telegram"
+                                             class="account-order-item__img" width="16" height="16">
+                                        <span class="account-order-item__name ui-text ui-text--weight-500 ui-text--size-xs">Реакция:</span>
+                                        <span class="account-order-item__emoji ui-text ui-text--weight-500 ui-text--size-xs">👍</span>
+                                    </div>
+                                    <a href="https://t.me/username/1000"
+                                       class="account-order-item__link ui-text ui-text--weight-500 ui-text--size-xs">https://t.me/username/1000</a>
+                                </div>
+                            </div>
+                            <div class="account-order-item__main">
+                                <div class="account-order-item__price">
+                                    <p class="account-order-item__count ui-text ui-text--weight-700 ui-text--size-xs">
+                                        1000</p>
+                                    <p class="account-order-item__value ui-text ui-text--weight-500 ui-text--size-xs">
+                                        $0.0042/шт.</p>
+                                </div>
+                                <div class="account-order-item__progress account-order-item-progress">
+                                    <div class="account-order-item-progress__bar"
+                                         style="--account-order-item-progress-line: 100%">
+                                        <div class="account-order-item-progress__line"></div>
+                                    </div>
+                                    <div class="account-order-item-progress__row">
+                                        <p class="account-order-item-progress__title ui-text ui-text--weight-500 ui-text--size-xs">
+                                            Выполнено:</p>
+                                        <p class="account-order-item-progress__value ui-text ui-text--weight-500 ui-text--size-xs">
+                                            <span>1000</span> / 1000</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account-order-item__footer" id="account-order-item-footer-index-1">
+                                <div class="account-order-item__status account-order-item__status--completed ui-text ui-text--weight-500 ui-text--size-xxs"
+                                     data-da="#account-order-item-head-index-1,1231,2">
+                                    <span>✅</span>
+                                    <span>Завершено</span>
+                                </div>
+                                <div class="account-order-item__actions">
+                                    <button class="account-order-item__btn">
+                                        <svg width="20" height="20" class="account-order-item__btn-ico">
+                                            <use xlink:href="./img/sprites.svg#icon-help"></use>
+                                        </svg>
+                                    </button>
+                                    <button class="account-order-item__btn">
+                                        <svg width="20" height="20" class="account-order-item__btn-ico">
+                                            <use xlink:href="./img/sprites.svg#icon-repeat"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="account-order-item">
+                            <div class="account-order-item__head" id="account-order-item-head-index-2">
+                                <div class="account-order-item__data"
+                                     data-da="#account-order-item-footer-index-2,1231,0">
+                                    <p class="account-order-item__id ui-text ui-text--weight-500 ui-text--size-xs">
+                                        ID: <span class="ui-text ui-text--weight-700">00005</span>
+                                    </p>
+                                    <p class="account-order-item__date ui-text ui-text--weight-500 ui-text--size-xs">
+                                        17.02. 14:00</p>
+                                </div>
+                                <div class="account-order-item__info">
+                                    <div class="account-order-item__title">
+                                        <img src="../img/png/telegram.png" alt="telegram"
+                                             class="account-order-item__img" width="16" height="16">
+                                        <span class="account-order-item__name ui-text ui-text--weight-500 ui-text--size-xs">Реакция:</span>
+                                        <span class="account-order-item__emoji ui-text ui-text--weight-500 ui-text--size-xs">👍</span>
+                                    </div>
+                                    <a href="https://t.me/username/1000"
+                                       class="account-order-item__link ui-text ui-text--weight-500 ui-text--size-xs">https://t.me/username/1000</a>
+                                </div>
+                            </div>
+                            <div class="account-order-item__main">
+                                <div class="account-order-item__price">
+                                    <p class="account-order-item__count ui-text ui-text--weight-700 ui-text--size-xs">
+                                        1000</p>
+                                    <p class="account-order-item__value ui-text ui-text--weight-500 ui-text--size-xs">
+                                        $0.0042/шт.</p>
+                                </div>
+                                <div class="account-order-item__progress account-order-item-progress">
+                                    <div class="account-order-item-progress__bar"
+                                         style="--account-order-item-progress-line: 0%">
+                                        <div class="account-order-item-progress__line"></div>
+                                    </div>
+                                    <div class="account-order-item-progress__row">
+                                        <p class="account-order-item-progress__title ui-text ui-text--weight-500 ui-text--size-xs">
+                                            Выполнено:</p>
+                                        <p class="account-order-item-progress__value ui-text ui-text--weight-500 ui-text--size-xs">
+                                            <span>0</span> / 1000</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account-order-item__footer" id="account-order-item-footer-index-2">
+                                <div class="account-order-item__status account-order-item__status--waiting ui-text ui-text--weight-500 ui-text--size-xxs"
+                                     data-da="#account-order-item-head-index-2,1231,2">
+                                    <span>⏳</span>
+                                    <span>В ожидании</span>
+                                </div>
+                                <div class="account-order-item__actions">
+                                    <button class="account-order-item__btn">
+                                        <svg width="20" height="20" class="account-order-item__btn-ico">
+                                            <use xlink:href="./img/sprites.svg#icon-help"></use>
+                                        </svg>
+                                    </button>
+                                    <button class="account-order-item__btn">
+                                        <svg width="20" height="20" class="account-order-item__btn-ico">
+                                            <use xlink:href="./img/sprites.svg#icon-repeat"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="account-order-item">
+                            <div class="account-order-item__head" id="account-order-item-head-index-3">
+                                <div class="account-order-item__data"
+                                     data-da="#account-order-item-footer-index-3,1231,0">
+                                    <p class="account-order-item__id ui-text ui-text--weight-500 ui-text--size-xs">
+                                        ID: <span class="ui-text ui-text--weight-700">00002</span>
+                                    </p>
+                                    <p class="account-order-item__date ui-text ui-text--weight-500 ui-text--size-xs">
+                                        17.02. 14:00</p>
+                                </div>
+                                <div class="account-order-item__info">
+                                    <div class="account-order-item__title">
+                                        <img src="../img/png/telegram.png" alt="telegram"
+                                             class="account-order-item__img" width="16" height="16">
+                                        <span class="account-order-item__name ui-text ui-text--weight-500 ui-text--size-xs">Реакция:</span>
+                                        <span class="account-order-item__emoji ui-text ui-text--weight-500 ui-text--size-xs">👍</span>
+                                    </div>
+                                    <a href="https://t.me/username/1000"
+                                       class="account-order-item__link ui-text ui-text--weight-500 ui-text--size-xs">https://t.me/username/1000</a>
+                                </div>
+                            </div>
+                            <div class="account-order-item__main">
+                                <div class="account-order-item__price">
+                                    <p class="account-order-item__count ui-text ui-text--weight-700 ui-text--size-xs">
+                                        1000</p>
+                                    <p class="account-order-item__value ui-text ui-text--weight-500 ui-text--size-xs">
+                                        $0.0042/шт.</p>
+                                </div>
+                                <div class="account-order-item__progress account-order-item-progress">
+                                    <div class="account-order-item-progress__bar"
+                                         style="--account-order-item-progress-line: 0%">
+                                        <div class="account-order-item-progress__line"></div>
+                                    </div>
+                                    <div class="account-order-item-progress__row">
+                                        <p class="account-order-item-progress__title ui-text ui-text--weight-500 ui-text--size-xs">
+                                            Выполнено:</p>
+                                        <p class="account-order-item-progress__value ui-text ui-text--weight-500 ui-text--size-xs">
+                                            <span>0</span> / 1000</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account-order-item__footer" id="account-order-item-footer-index-3">
+                                <div class="account-order-item__status account-order-item__status--canceled ui-text ui-text--weight-500 ui-text--size-xxs"
+                                     data-da="#account-order-item-head-index-3,1231,2">
+                                    <span>❌</span>
+                                    <span>Отменено</span>
+                                </div>
+                                <div class="account-order-item__actions">
+                                    <button class="account-order-item__btn">
+                                        <svg width="20" height="20" class="account-order-item__btn-ico">
+                                            <use xlink:href="./img/sprites.svg#icon-help"></use>
+                                        </svg>
+                                    </button>
+                                    <button class="account-order-item__btn">
+                                        <svg width="20" height="20" class="account-order-item__btn-ico">
+                                            <use xlink:href="./img/sprites.svg#icon-repeat"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="account-order-item">
+                            <div class="account-order-item__head" id="account-order-item-head-index-4">
+                                <div class="account-order-item__data"
+                                     data-da="#account-order-item-footer-index-4,1231,0">
+                                    <p class="account-order-item__id ui-text ui-text--weight-500 ui-text--size-xs">
+                                        ID: <span class="ui-text ui-text--weight-700">00002</span>
+                                    </p>
+                                    <p class="account-order-item__date ui-text ui-text--weight-500 ui-text--size-xs">
+                                        17.02. 14:00</p>
+                                </div>
+                                <div class="account-order-item__info">
+                                    <div class="account-order-item__title">
+                                        <img src="../img/png/telegram.png" alt="telegram"
+                                             class="account-order-item__img" width="16" height="16">
+                                        <span class="account-order-item__name ui-text ui-text--weight-500 ui-text--size-xs">Реакция:</span>
+                                        <span class="account-order-item__emoji ui-text ui-text--weight-500 ui-text--size-xs">👍</span>
+                                    </div>
+                                    <a href="https://t.me/username/1000"
+                                       class="account-order-item__link ui-text ui-text--weight-500 ui-text--size-xs">https://t.me/username/1000</a>
+                                </div>
+                            </div>
+                            <div class="account-order-item__main">
+                                <div class="account-order-item__price">
+                                    <p class="account-order-item__count ui-text ui-text--weight-700 ui-text--size-xs">
+                                        1000</p>
+                                    <p class="account-order-item__value ui-text ui-text--weight-500 ui-text--size-xs">
+                                        $0.0042/шт.</p>
+                                </div>
+                                <div class="account-order-item__progress account-order-item-progress">
+                                    <div class="account-order-item-progress__bar"
+                                         style="--account-order-item-progress-line: 90%">
+                                        <div class="account-order-item-progress__line"></div>
+                                    </div>
+                                    <div class="account-order-item-progress__row">
+                                        <p class="account-order-item-progress__title ui-text ui-text--weight-500 ui-text--size-xs">
+                                            Выполнено:</p>
+                                        <p class="account-order-item-progress__value ui-text ui-text--weight-500 ui-text--size-xs">
+                                            <span>900</span> / 1000</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account-order-item__footer" id="account-order-item-footer-index-4">
+                                <div class="account-order-item__status account-order-item__status--completed ui-text ui-text--weight-500 ui-text--size-xxs"
+                                     data-da="#account-order-item-head-index-4,1231,2">
+                                    <span>✅</span>
+                                    <span>Завершено</span>
+                                </div>
+                                <div class="account-order-item__actions">
+                                    <button class="account-order-item__btn">
+                                        <svg width="20" height="20" class="account-order-item__btn-ico">
+                                            <use xlink:href="./img/sprites.svg#icon-help"></use>
+                                        </svg>
+                                    </button>
+                                    <button class="account-order-item__btn">
+                                        <svg width="20" height="20" class="account-order-item__btn-ico">
+                                            <use xlink:href="./img/sprites.svg#icon-repeat"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="account-order__footer">
+                        <button class="account-order__btn account-order__btn--disabled account-order__btn--prev"
+                                disabled>
+                            <span class="account-order__btn-ico">
+                                <svg>
+                                    <use xlink:href="./img/sprites.svg#icon-arrow-left"></use>
+                                </svg>
+                            </span>
+                            <span class="account-order__btn-label ui-text ui-text--weight-500 ui-text--size-xs">Предыдущая</span>
+                        </button>
+                        <div class="account-order__count account-order-count">
+                            <div class="account-order-count__select account-select">
+                                <div class="account-select__field">
+                                    <span class="account-select__value ui-text ui-text--weight-500 ui-text--size-s">10</span>
+                                    <svg class="account-select__icon" width="12" height="12">
+                                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                                    </svg>
+                                </div>
+                                <div class="account-select__wrapper">
+                                    <ul class="account-select__list">
+                                        <li class="account-select__item ui-text ui-text--weight-500 ui-text--size-s account-select__item--is-active">
+                                            10
+                                        </li>
+                                        <li class="account-select__item ui-text ui-text--weight-500 ui-text--size-s">
+                                            20
+                                        </li>
+                                        <li class="account-select__item ui-text ui-text--weight-500 ui-text--size-s">
+                                            50
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <span class="account-order-count__name ui-text ui-text--weight-500 ui-text--size-xxs">Показано 8 из 100</span>
+                        </div>
+                        <button class="account-order__btn account-order__btn--prev">
+                            <span class="account-order__btn-label ui-text ui-text--weight-500 ui-text--size-xs">Следующая</span>
+                            <span class="account-order__btn-ico">
+                                <svg>
+                                    <use xlink:href="./img/sprites.svg#icon-arrow-right"></use>
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@@include('./common/footer.html')

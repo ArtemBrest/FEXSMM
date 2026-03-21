@@ -1,0 +1,693 @@
+@@include('./common/header.html')
+<section class="account mb-100">
+    <div class="container">
+        <div class="account__wrapper">
+            <aside class="account__aside account-aside">
+                <div class="account__wallet account-wallet">
+                    <div class="account-wallet__box">
+                        <svg class="account-wallet__icon">
+                            <use xlink:href="./img/sprites.svg#icon-wallet"></use>
+                        </svg>
+                    </div>
+                    <div class="account-wallet__info">
+                        <span class="account-wallet__title ui-text ui-text--weight-500 ui-text--size-xs">Баланс</span>
+                        <span class="account-wallet__balance ui-text--weight-700 ui-text--size-l">199.99 $</span>
+                    </div>
+                    <button class="account-wallet__deposit">
+                        <svg class="account-wallet__deposit-ico">
+                            <use xlink:href="./img/sprites.svg#icon-add"></use>
+                        </svg>
+                    </button>
+                </div>
+                <button class="account__order button-main button-main--theme-primary">
+                    <svg width="12" height="12">
+                        <use xlink:href="./img/sprites.svg#icon-add"></use>
+                    </svg>
+                    <span class="ui-text ui-text--weight-700 ui-text--size-xs">создать заказ</span>
+                </button>
+                <div class="account__group">
+                    <ul class="account__menu account-menu">
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-order"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Мои
+                                заказы</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-reload"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link  ui-text ui-text--weight-500 ui-text--size-s">Автоуслуги</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-list-details"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Интервальные
+                                заказы</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-list-details"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Постепенные
+                                заказы</a>
+                        </li>
+                    </ul>
+                    <div class="account__separator"></div>
+                    <ul class="account__menu account-menu">
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-referral"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Реф.
+                                программа</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-notifications"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Центр
+                                уведомлений</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-history"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">История
+                                баланса</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-settings"></use>
+                                </svg>
+                            </div>
+                            <a href="#"
+                               class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Настройки</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-support"></use>
+                                </svg>
+                            </div>
+                            <a href="#"
+                               class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Поддержка</a>
+                        </li>
+                    </ul>
+                    <div class="account__separator"></div>
+                    <ul class="account__menu account-menu">
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-logout"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Выйти</a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <div class="account__content">
+                <div class="account__head">
+                    <h1 class="account__title ui-text ui-text--weight-700 ui-text--size-xxl">Создать новый заказ</h1>
+                </div>
+                <div class="account-order">
+                    <div class="calc">
+                        <div class="calc__wrapper calc__wrapper--column">
+                            <div class="calc__group calc-social">
+                                <p class="calc__title ui-text ui-text--weight-500 ui-text--uppercase ui-text--size-xs">
+                                    Социальная сеть</p>
+                                <div class="calc-social__list">
+                                    <label class="calc-social-option">
+                                        <input type="radio" name="social" value="youtube" checked>
+                                        <span class="calc-social-option__icon">
+                        <img src="../img/png/youtube.png" alt="" width="28" height="28">
+                    </span>
+                                    </label>
+                                    <label class="calc-social-option">
+                                        <input type="radio" name="social" value="discord">
+                                        <span class="calc-social-option__icon">
+                        <img src="../img/png/discord.png" alt="" width="28" height="28">
+                    </span>
+                                    </label>
+                                    <label class="calc-social-option">
+                                        <input type="radio" name="social" value="facebook">
+                                        <span class="calc-social-option__icon">
+                        <img src="../img/png/facebook.png" alt="" width="28" height="28">
+                    </span>
+                                    </label>
+                                    <label class="calc-social-option">
+                                        <input type="radio" name="social" value="google">
+                                        <span class="calc-social-option__icon">
+                        <img src="../img/png/google.png" alt="" width="28" height="28">
+                    </span>
+                                    </label>
+                                    <label class="calc-social-option">
+                                        <input type="radio" name="social" value="instagram">
+                                        <span class="calc-social-option__icon">
+                        <img src="../img/png/instagram.png" alt="" width="28" height="28">
+                    </span>
+                                    </label>
+                                    <label class="calc-social-option">
+                                        <input type="radio" name="social" value="linkedin">
+                                        <span class="calc-social-option__icon">
+                        <img src="../img/png/linkedin.png" alt="" width="28" height="28">
+                    </span>
+                                    </label>
+                                    <label class="calc-social-option">
+                                        <input type="radio" name="social" value="telegram">
+                                        <span class="calc-social-option__icon">
+                            <img src="../img/png/telegram.png" alt="" width="28" height="28">
+                        </span>
+                                    </label>
+                                    <label class="calc-social-option">
+                                        <input type="radio" name="social" value="tiktok">
+                                        <span class="calc-social-option__icon">
+                            <img src="../img/png/tiktok.png" alt="" width="28" height="28">
+                        </span>
+                                    </label>
+                                    <label class="calc-social-option">
+                                        <input type="radio" name="social" value="twitch">
+                                        <span class="calc-social-option__icon">
+                            <img src="../img/png/twitch.png" alt="" width="28" height="28">
+                        </span>
+                                    </label>
+                                    <label class="calc-social-option">
+                                        <input type="radio" name="social" value="twitter">
+                                        <span class="calc-social-option__icon">
+                            <img src="../img/png/twitter.png" alt="" width="28" height="28">
+                        </span>
+                                    </label>
+                                    <label class="calc-social-option">
+                                        <input type="radio" name="social" value="vkontakte">
+                                        <span class="calc-social-option__icon">
+                            <img src="../img/png/vkontakte.png" alt="" width="28" height="28">
+                        </span>
+                                    </label>
+                                    <label class="calc-social-option">
+                                        <input type="radio" name="social" value="raddit">
+                                        <span class="calc-social-option__icon">
+                            <img src="../img/png/raddit.png" alt="" width="28" height="28">
+                        </span>
+                                    </label>
+                                    <label class="calc-social-option">
+                                        <input type="radio" name="social" value="soundcloud">
+                                        <span class="calc-social-option__icon">
+                            <img src="../img/png/soundcloud.png" alt="" width="28" height="28">
+                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="calc__group calc-service">
+                                <p class="calc__title ui-text ui-text--weight-500 ui-text--uppercase ui-text--size-xs">
+                                    Тип услуги</p>
+                                <div class="calc-service__list">
+                                    <label class="calc-service-option">
+                                        <input type="radio" name="service" value="Подписчики" checked>
+                                        <span class="calc-service-option__row">
+                                <img src="../img/png/services-tag-icon-1.png" alt="" width="16" height="16">
+                                <span class="calc-service-option__name ui-text ui-text--weight-500 ui-text--size-s">Подписчики</span>
+                            </span>
+                                    </label>
+                                    <label class="calc-service-option">
+                                        <input type="radio" name="service" value="Просмотры">
+                                        <span class="calc-service-option__row">
+                                <img src="../img/png/services-tag-icon-2.png" alt="" width="16" height="16">
+                                <span class="calc-service-option__name ui-text ui-text--weight-500 ui-text--size-s">Просмотры</span>
+                            </span>
+                                    </label>
+                                    <label class="calc-service-option">
+                                        <input type="radio" name="service" value="Реакции">
+                                        <span class="calc-service-option__row">
+                                <img src="../img/png/services-tag-icon-3.png" alt="" width="16" height="16">
+                                <span class="calc-service-option__name ui-text ui-text--weight-500 ui-text--size-s">Реакции</span>
+                            </span>
+                                    </label>
+                                    <label class="calc-service-option">
+                                        <input type="radio" name="service" value="Комментарии">
+                                        <span class="calc-service-option__row">
+                                <img src="../img/png/services-tag-icon-6.png" alt="" width="16" height="16">
+                                <span class="calc-service-option__name ui-text ui-text--weight-500 ui-text--size-s">Комментарии</span>
+                            </span>
+                                    </label>
+                                    <label class="calc-service-option">
+                                        <input type="radio" name="service" value="Репосты">
+                                        <span class="calc-service-option__row">
+                                <img src="../img/png/services-tag-icon-4.png" alt="" width="16" height="16">
+                                <span class="calc-service-option__name ui-text ui-text--weight-500 ui-text--size-s">Репосты</span>
+                            </span>
+                                    </label>
+                                    <label class="calc-service-option">
+                                        <input type="radio" name="service" value="Истории">
+                                        <span class="calc-service-option__row">
+                                <img src="../img/png/services-tag-icon-7.png" alt="" width="16" height="16">
+                                <span class="calc-service-option__name ui-text ui-text--weight-500 ui-text--size-s">Истории</span>
+                            </span>
+                                    </label>
+                                </div>
+                                <div class="calc-service__group">
+                                    <label class="calc-account-option">
+                                        <input type="radio" name="account" value="Премиум аккаунты" checked>
+                                        <span class="calc-account-option__row">
+                        <span class="calc-account-option__left">
+                            <img src="../img/png/account-tag-icon-1.png" alt="" width="50" height="50">
+                            <span class="calc-account-option__info">
+                                <span class="calc-account-option__title ui-text ui-text--weight-500 ui-text--size-s">Подписчики</span>
+                                <span class="calc-account-option__text ui-text ui-text--weight-500 ui-text--size-xs">Качественные живые аккаунты</span>
+                            </span>
+                        </span>
+                        <span class="calc-account-option__right">
+                            <span class="calc-account-option__value ui-text ui-text--weight-500 ui-text--size-xxs">x 3</span>
+                            <span class="calc-account-option__check">
+                                <img src="../img/svg/check.svg" alt="">
+                            </span>
+                        </span>
+                    </span>
+                                    </label>
+                                    <label class="calc-account-option">
+                                        <input type="radio" name="account" value="Онлайн аккаунты">
+                                        <span class="calc-account-option__row">
+                        <span class="calc-account-option__left">
+                            <img src="../img/png/account-tag-icon-2.png" alt="" width="50" height="50">
+                            <span class="calc-account-option__info">
+                                <span class="calc-account-option__title ui-text ui-text--weight-500 ui-text--size-s">Онлайн аккаунты</span>
+                                <span class="calc-account-option__text ui-text ui-text--weight-500 ui-text--size-xs">Активные пользователи онлайн</span>
+                            </span>
+                        </span>
+                        <span class="calc-account-option__right">
+                            <span class="calc-account-option__value ui-text ui-text--weight-500 ui-text--size-xxs">x 1.5</span>
+                            <span class="calc-account-option__check">
+                                <img src="../img/svg/check.svg" alt="">
+                            </span>
+                        </span>
+                    </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="calc__group calc-country">
+                                <p class="calc__title ui-text ui-text--weight-500 ui-text--uppercase ui-text--size-xs">
+                                    Выбор страны</p>
+                                <div class="calc-country__list">
+                                    <label class="calc-country-option">
+                                        <input type="radio" name="country" value="Рекомендуемые" checked>
+                                        <span class="calc-country-option__row">
+                        <img src="../img/png/country-tag-icon-1.png" alt="" width="16" height="16">
+                        <span class="calc-country-option__name ui-text ui-text--weight-500 ui-text--size-s">Рекомендуемые</span>
+                        <span class="calc-country-option__value ui-text ui-text--weight-500 ui-text--size-xxs">$ 1</span>
+                    </span>
+                                    </label>
+                                    <label class="calc-country-option">
+                                        <input type="radio" name="country" value="США">
+                                        <span class="calc-country-option__row">
+                        <img src="../img/png/country-tag-icon-1.png" alt="" width="16" height="16">
+                        <span class="calc-country-option__name ui-text ui-text--weight-500 ui-text--size-s">США</span>
+                        <span class="calc-country-option__value ui-text ui-text--weight-500 ui-text--size-xxs">$ 1</span>
+                    </span>
+                                    </label>
+                                    <label class="calc-country-option">
+                                        <input type="radio" name="country" value="Стандартные">
+                                        <span class="calc-country-option__row">
+                        <img src="../img/png/country-tag-icon-1.png" alt="" width="16" height="16">
+                        <span class="calc-country-option__name ui-text ui-text--weight-500 ui-text--size-s">Стандартные</span>
+                        <span class="calc-country-option__value ui-text ui-text--weight-500 ui-text--size-xxs">$ 1</span>
+                    </span>
+                                    </label>
+                                    <label class="calc-country-option">
+                                        <input type="radio" name="country" value="СНГ">
+                                        <span class="calc-country-option__row">
+                        <img src="../img/png/country-tag-icon-0.png" alt="" width="16" height="16">
+                        <span class="calc-country-option__name ui-text ui-text--weight-500 ui-text--size-s">СНГ</span>
+                        <span class="calc-country-option__value ui-text ui-text--weight-500 ui-text--size-xxs">$ 1</span>
+                    </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="calc__group calc-guarantee">
+                                <p class="calc__title ui-text ui-text--weight-500 ui-text--uppercase ui-text--size-xs">
+                                    Гарантия</p>
+                                <div class="calc-guarantee__list">
+                                    <label class="calc-guarantee-option">
+                                        <input type="radio" name="guarantee" value="3" checked>
+                                        <span class="calc-guarantee-option__row">
+                                <span class="calc-guarantee-option__name ui-text ui-text--weight-500 ui-text--size-s">
+                                    <span class="ui-text ui-text--weight-700 ui-text--size-l">3</span>
+                                    дн.
+                                </span>
+                                <span class="calc-guarantee-option__value ui-text ui-text--weight-500 ui-text--size-xxs">x 1</span>
+                            </span>
+                                    </label>
+                                    <label class="calc-guarantee-option">
+                                        <input type="radio" name="guarantee" value="7">
+                                        <span class="calc-guarantee-option__row">
+                                <span class="calc-guarantee-option__name ui-text ui-text--weight-500 ui-text--size-s">
+                                    <span class="ui-text ui-text--weight-700 ui-text--size-l">7</span>
+                                    дн.
+                                </span>
+                                <span class="calc-guarantee-option__value ui-text ui-text--weight-500 ui-text--size-xxs">x 1</span>
+                            </span>
+                                    </label>
+                                    <label class="calc-guarantee-option">
+                                        <input type="radio" name="guarantee" value="14">
+                                        <span class="calc-guarantee-option__row">
+                                <span class="calc-guarantee-option__name ui-text ui-text--weight-500 ui-text--size-s">
+                                    <span class="ui-text ui-text--weight-700 ui-text--size-l">14</span>
+                                    дн.
+                                </span>
+                                <span class="calc-guarantee-option__value ui-text ui-text--weight-500 ui-text--size-xxs">x 1.4</span>
+                            </span>
+                                    </label>
+                                    <label class="calc-guarantee-option">
+                                        <input type="radio" name="guarantee" value="30">
+                                        <span class="calc-guarantee-option__row">
+                                <span class="calc-guarantee-option__name ui-text ui-text--weight-500 ui-text--size-s">
+                                    <span class="ui-text ui-text--weight-700 ui-text--size-l">30</span>
+                                    дн.
+                                </span>
+                                <span class="calc-guarantee-option__value ui-text ui-text--weight-500 ui-text--size-xxs">x 1.8</span>
+                            </span>
+                                    </label>
+                                    <label class="calc-guarantee-option">
+                                        <input type="radio" name="guarantee" value="60">
+                                        <span class="calc-guarantee-option__row">
+                                <span class="calc-guarantee-option__name ui-text ui-text--weight-500 ui-text--size-s">
+                                    <span class="ui-text ui-text--weight-700 ui-text--size-l">60</span>
+                                    дн.
+                                </span>
+                                <span class="calc-guarantee-option__value ui-text ui-text--weight-500 ui-text--size-xxs">x 2.2</span>
+                            </span>
+                                    </label>
+                                    <label class="calc-guarantee-option">
+                                        <input type="radio" name="guarantee" value="90">
+                                        <span class="calc-guarantee-option__row">
+                                <span class="calc-guarantee-option__name ui-text ui-text--weight-500 ui-text--size-s">
+                                    <span class="ui-text ui-text--weight-700 ui-text--size-l">90</span>
+                                    дн.
+                                </span>
+                                <span class="calc-guarantee-option__value ui-text ui-text--weight-500 ui-text--size-xxs">x 2.5</span>
+                            </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="calc__group calc-quantity">
+                                <p class="calc__title ui-text ui-text--weight-500 ui-text--uppercase ui-text--size-xs">
+                                    Количество подписчиков</p>
+                                <div class="calc-quantity__field">
+                                    <input type="number" name="quantity" value="100" min="1" max="1000" step="1"
+                                           inputmode="numeric" placeholder="Введите количество"
+                                           class="calc-quantity__input ui-text ui-text--weight-500 ui-text--size-s"/>
+                                    <div class="calc-quantity__controls">
+                                        <button class="calc-quantity__btn calc-quantity__btn--plus">
+                                            <svg class="calc-quantity__btn-ico">
+                                                <use xlink:href="./img/sprites.svg#icon-add"></use>
+                                            </svg>
+                                        </button>
+                                        <button class="calc-quantity__btn calc-quantity__btn--minus" disabled>
+                                            <svg class="calc-quantity__btn-ico">
+                                                <use xlink:href="./img/sprites.svg#icon-remove"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="calc__group calc-feed">
+                                <div class="calc-feed__head">
+                                    <label class="calc-feed-option">
+                                        <input type="checkbox" name="feed" checked class="calc-feed__input">
+                                        <span class="calc-feed-option__check">
+                      <img src="../img/svg/check.svg" alt="">
+                  </span>
+                                        <span class="calc-feed-option__info">
+                      <span class="calc-feed-option__title ui-text ui-text--weight-700 ui-text--size-s">Постепенная подача</span>
+                      <span class="calc-feed-option__text ui-text ui-text--weight-500 ui-text--size-xs">Равномерное распределение выполнения заказа по времени</span>
+                  </span>
+                                    </label>
+                                </div>
+                                <div class="calc-feed__wrapper">
+                                    <div class="calc-feed__item calc-quantity">
+                                        <p class="calc__title ui-text ui-text--weight-500 ui-text--uppercase ui-text--size-xs">
+                                            Количество запусков</p>
+                                        <div class="calc-quantity__field">
+                                            <input type="number" name="quantity" min="1" max="1000" step="1"
+                                                   inputmode="numeric" placeholder="Кол-во"
+                                                   class="calc-quantity__input ui-text ui-text--weight-500 ui-text--size-s"/>
+                                            <div class="calc-quantity__controls">
+                                                <button class="calc-quantity__btn calc-quantity__btn--plus">
+                                                    <svg class="calc-quantity__btn-ico">
+                                                        <use xlink:href="./img/sprites.svg#icon-add"></use>
+                                                    </svg>
+                                                </button>
+                                                <button class="calc-quantity__btn calc-quantity__btn--minus" disabled>
+                                                    <svg class="calc-quantity__btn-ico">
+                                                        <use xlink:href="./img/sprites.svg#icon-remove"></use>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="calc-feed__item calc-quantity">
+                                        <p class="calc__title ui-text ui-text--weight-500 ui-text--uppercase ui-text--size-xs">
+                                            Интервал в минутах</p>
+                                        <div class="calc-quantity__field">
+                                            <input type="number" name="quantity" min="1" max="1000" step="1"
+                                                   inputmode="numeric" placeholder="Кол-во"
+                                                   class="calc-quantity__input ui-text ui-text--weight-500 ui-text--size-s"/>
+                                            <div class="calc-quantity__controls">
+                                                <button class="calc-quantity__btn calc-quantity__btn--plus">
+                                                    <svg class="calc-quantity__btn-ico">
+                                                        <use xlink:href="./img/sprites.svg#icon-add"></use>
+                                                    </svg>
+                                                </button>
+                                                <button class="calc-quantity__btn calc-quantity__btn--minus" disabled>
+                                                    <svg class="calc-quantity__btn-ico">
+                                                        <use xlink:href="./img/sprites.svg#icon-remove"></use>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="calc-feed__item calc-feed__item--is-counter calc-quantity calc-quantity--is-counter">
+                                        <p class="calc__title ui-text ui-text--weight-500 ui-text--uppercase ui-text--size-xs">
+                                            Количество на пост</p>
+                                        <div class="calc-quantity__row">
+                                            <div class="calc-quantity__field">
+                                                <div class="calc-quantity__controls">
+                                                    <button class="calc-quantity__btn calc-quantity__btn--plus">
+                                                        <svg class="calc-quantity__btn-ico">
+                                                            <use xlink:href="./img/sprites.svg#icon-add"></use>
+                                                        </svg>
+                                                    </button>
+                                                    <input type="number" name="quantity" value="1" min="1" max="100"
+                                                           step="1" inputmode="numeric" placeholder="1"
+                                                           class="calc-quantity__input ui-text ui-text--weight-500 ui-text--size-s"/>
+                                                    <button class="calc-quantity__btn calc-quantity__btn--minus" disabled>
+                                                        <svg class="calc-quantity__btn-ico">
+                                                            <use xlink:href="./img/sprites.svg#icon-remove"></use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <span class="calc-quantity__separator ui-text ui-text--weight-500 ui-text--size-m">=</span>
+                                            <span class="calc-quantity__total ui-text ui-text--weight-700 ui-text--size-l">0.000 $</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="calc__group calc-feed">
+                                <p class="calc__title ui-text ui-text--weight-500 ui-text--uppercase ui-text--size-xs">Имя пользователя/ссылка</p>
+                                <div class="calc-feed__block calc-text">
+                                    <div class="calc-text__field">
+                                        <input type="text" name="username" placeholder="https://t.me/username/1000" class="calc-text__input ui-text ui-text--weight-500 ui-text--size-s"/>
+                                    </div>
+                                </div>
+                                <div class="calc-feed__head">
+                                    <label class="calc-feed-option">
+                                        <input type="checkbox" name="more-link" checked class="calc-feed__input">
+                                        <span class="calc-feed-option__check">
+                                      <img src="../img/svg/check.svg" alt="">
+                                    </span>
+                                        <span class="calc-feed-option__info">
+                                      <span class="calc-feed-option__title ui-text ui-text--weight-700 ui-text--size-s">Добавить несколько ссылок</span>
+                                      <span class="calc-feed-option__text ui-text ui-text--weight-500 ui-text--size-xs">Введите по одной ссылке в строку</span>
+                                    </span>
+                                    </label>
+                                </div>
+                                <div class="calc-feed__wrapper calc-feed__wrapper--no-style">
+                                    <textarea class="calc-feed__textarea ui-text ui-text--weight-500 ui-text--size-s" placeholder="https://example.com/link1"></textarea>
+                                </div>
+                            </div>
+                            <div class="calc__group calc-feed">
+                                <p class="calc__title ui-text ui-text--weight-500 ui-text--uppercase ui-text--size-xs">
+                                    Укажите количество (минимум И максимум)</p>
+                                <div class="calc-feed__wrapper-top">
+                                    <div class="calc-feed__wrapper calc-feed__wrapper--no-bg" style="display: flex;">
+                                        <div class="calc-feed__item calc-quantity">
+                                            <div class="calc-quantity__field">
+                                                <input type="number" name="quantity" min="1" max="1000" step="1"
+                                                       inputmode="numeric" placeholder="Кол-во"
+                                                       class="calc-quantity__input ui-text ui-text--weight-500 ui-text--size-s"/>
+                                                <div class="calc-quantity__controls">
+                                                    <button class="calc-quantity__btn calc-quantity__btn--plus">
+                                                        <svg class="calc-quantity__btn-ico">
+                                                            <use xlink:href="./img/sprites.svg#icon-add"></use>
+                                                        </svg>
+                                                    </button>
+                                                    <button class="calc-quantity__btn calc-quantity__btn--minus" disabled>
+                                                        <svg class="calc-quantity__btn-ico">
+                                                            <use xlink:href="./img/sprites.svg#icon-remove"></use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="calc-feed__item calc-quantity">
+                                            <div class="calc-quantity__field">
+                                                <input type="number" name="quantity" min="1" max="1000" step="1"
+                                                       inputmode="numeric" placeholder="Кол-во"
+                                                       class="calc-quantity__input ui-text ui-text--weight-500 ui-text--size-s"/>
+                                                <div class="calc-quantity__controls">
+                                                    <button class="calc-quantity__btn calc-quantity__btn--plus">
+                                                        <svg class="calc-quantity__btn-ico">
+                                                            <use xlink:href="./img/sprites.svg#icon-add"></use>
+                                                        </svg>
+                                                    </button>
+                                                    <button class="calc-quantity__btn calc-quantity__btn--minus" disabled>
+                                                        <svg class="calc-quantity__btn-ico">
+                                                            <use xlink:href="./img/sprites.svg#icon-remove"></use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="calc-feed__item calc-feed__item--is-counter calc-quantity calc-quantity--is-counter">
+                                            <div class="calc-quantity__row">
+                                                <span class="ui-text ui-text--weight-500 ui-text--size-xs">Цена за <br>новые посты</span>
+                                                <span class="calc-quantity__separator ui-text ui-text--weight-500 ui-text--size-m">=</span>
+                                                <span class="calc-quantity__total ui-text ui-text--weight-700 ui-text--size-l">0.000 $</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="calc-feed__notice ui-text ui-text--weight-500 ui-text--size-xxs">Лимиты: от 1 до 400000</span>
+                                </div>
+                            </div>
+                            <div class="calc__group calc-quantity">
+                                <p class="calc__title ui-text ui-text--weight-500 ui-text--uppercase ui-text--size-xs">
+                                    Новые публикации</p>
+                                <div class="calc-quantity__field">
+                                    <input type="number" name="quantity" value="100" min="1" max="1000" step="1"
+                                           inputmode="numeric" placeholder="Введите количество"
+                                           class="calc-quantity__input ui-text ui-text--weight-500 ui-text--size-s"/>
+                                    <div class="calc-quantity__controls">
+                                        <button class="calc-quantity__btn calc-quantity__btn--plus">
+                                            <svg class="calc-quantity__btn-ico">
+                                                <use xlink:href="./img/sprites.svg#icon-add"></use>
+                                            </svg>
+                                        </button>
+                                        <button class="calc-quantity__btn calc-quantity__btn--minus" disabled>
+                                            <svg class="calc-quantity__btn-ico">
+                                                <use xlink:href="./img/sprites.svg#icon-remove"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="calc__group calc-quantity">
+                                <p class="calc__title ui-text ui-text--weight-500 ui-text--uppercase ui-text--size-xs">
+                                    Старые публикации</p>
+                                <div class="calc-quantity__field">
+                                    <input type="number" name="quantity" value="100" min="1" max="1000" step="1"
+                                           inputmode="numeric" placeholder="Введите количество"
+                                           class="calc-quantity__input ui-text ui-text--weight-500 ui-text--size-s"/>
+                                    <div class="calc-quantity__controls">
+                                        <button class="calc-quantity__btn calc-quantity__btn--plus">
+                                            <svg class="calc-quantity__btn-ico">
+                                                <use xlink:href="./img/sprites.svg#icon-add"></use>
+                                            </svg>
+                                        </button>
+                                        <button class="calc-quantity__btn calc-quantity__btn--minus" disabled>
+                                            <svg class="calc-quantity__btn-ico">
+                                                <use xlink:href="./img/sprites.svg#icon-remove"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="calc__group calc-delays">
+                                <p class="calc__title ui-text ui-text--weight-500 ui-text--uppercase ui-text--size-xs">Задержки</p>
+                                <div class="calc-select calc-select--is-alternative" data-select>
+                                    <button type="button" class="calc-select__trigger" data-select-trigger>
+                                        <span class="calc-select__value ui-text ui-text--weight-500 ui-text--size-s" data-select-value="">
+                                            <span class="calc-select__placeholder ui-text ui-text--weight-500 ui-text--size-s">Без задержки</span>
+                                        </span>
+                                        <span class="calc-select__arrow">
+                                            <svg>
+                                                <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                                            </svg>
+                                        </span>
+                                    </button>
+
+                                    <div class="calc-select__dropdown" data-select-dropdown>
+                                        <label class="calc-delays-option">
+                                            <input type="radio" name="delays" value="Без задержки" checked>
+                                            <span class="ui-text ui-text--weight-500 ui-text--size-s" data-select-row>Без задержки</span>
+                                        </label>
+                                        <label class="calc-delays-option">
+                                            <input type="radio" name="delays" value="1 мин">
+                                            <span class="ui-text ui-text--weight-500 ui-text--size-s" data-select-row>1 мин</span>
+                                        </label>
+                                        <label class="calc-delays-option">
+                                            <input type="radio" name="delays" value="5 мин">
+                                            <span class="ui-text ui-text--weight-500 ui-text--size-s" data-select-row>5 мин</span>
+                                        </label>
+                                        <label class="calc-delays-option">
+                                            <input type="radio" name="delays" value="10 мин">
+                                            <span class="ui-text ui-text--weight-500 ui-text--size-s" data-select-row>10 мин</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calc__summary calc-summary">
+                            <div class="calc-summary__wrapper">
+                                <div class="calc-summary__row">
+                                    <span class="calc-summary__name ui-text ui-text--weight-500 ui-text--size-l">Цена за единицу:</span>
+                                    <span class="calc-summary__value ui-text ui-text--weight-500 ui-text--size-l">$ 3.60</span>
+                                </div>
+                                <div class="calc-summary__row">
+                                    <span class="calc-summary__name ui-text ui-text--weight-500 ui-text--size-l">Количество:</span>
+                                    <span class="calc-summary__value ui-text ui-text--weight-500 ui-text--size-l">100</span>
+                                </div>
+                            </div>
+                            <div class="calc-summary__total">
+                                <span class="calc-summary__total-name ui-text ui-text--weight-700 ui-text--size-xxl">Итого:</span>
+                                <span class="calc-summary__total-value ui-text ui-text--weight-700 ui-text--size-xxl">$ 360</span>
+                            </div>
+                        </div>
+                        <div class="calc__actions">
+                            <button class="calc__btn calc__btn--type-submit button-main button-main--theme-primary">
+                                <span class="ui-text ui-text--weight-700 ui-text--size-s">Оформить задачу</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@@include('./common/footer.html')
