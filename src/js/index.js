@@ -558,4 +558,38 @@ window.addEventListener("load", function () {
             });
         });
     }
+
+    const accountNotificationTabs = document.querySelectorAll(".account-notification__tab");
+    const accountNotificationContentTabs = document.querySelectorAll(".account-notification__items");
+    if (!isEmptyObject(accountNotificationContentTabs) && !isEmptyObject(accountNotificationTabs)) {
+        for (let el of accountNotificationTabs) {
+            el.addEventListener("click", e => {
+                e.preventDefault();
+                if (document.querySelector(".account-notification__tab.account-notification__tab--is-active")) {
+                    document.querySelector(".account-notification__tab.account-notification__tab--is-active").classList.remove("account-notification__tab--is-active");
+                }
+                if (document.querySelector(".account-notification__items.account-notification__items--is-active")) {
+                    document.querySelector(".account-notification__items.account-notification__items--is-active").classList.remove("account-notification__items--is-active");
+                }
+                el.classList.add("account-notification__tab--is-active");
+                var index = [...el.parentElement.children].indexOf(el);
+                var panel = [...accountNotificationContentTabs].filter(el => el.getAttribute("data-index") == index);
+                panel[0].classList.add("account-notification__items--is-active");
+            });
+        }
+    }
+
+
+    const inputsDate = document.querySelectorAll('input[name="date"]');
+    if (!isEmptyObject(inputsDate)) {
+        inputsDate.forEach(input => {
+            const datepicker = new Datepicker(input, {
+                weekStart: 1,
+                language: 'ru',
+                format: 'dd.mm.yyyy',
+                type: 'input',
+            });
+            datepicker.input
+        });
+    }
 })

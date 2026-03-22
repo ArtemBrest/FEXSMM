@@ -1,0 +1,238 @@
+@@include('./common/header.html')
+<section class="account mb-100">
+    <div class="container">
+        <div class="account__wrapper">
+            <aside class="account__aside account-aside">
+                <div class="account__wallet account-wallet">
+                    <div class="account-wallet__box">
+                        <svg class="account-wallet__icon">
+                            <use xlink:href="./img/sprites.svg#icon-wallet"></use>
+                        </svg>
+                    </div>
+                    <div class="account-wallet__info">
+                        <span class="account-wallet__title ui-text ui-text--weight-500 ui-text--size-xs">Баланс</span>
+                        <span class="account-wallet__balance ui-text--weight-700 ui-text--size-l">199.99 $</span>
+                    </div>
+                    <button class="account-wallet__deposit">
+                        <svg class="account-wallet__deposit-ico">
+                            <use xlink:href="./img/sprites.svg#icon-add"></use>
+                        </svg>
+                    </button>
+                </div>
+                <button class="account__order button-main button-main--theme-primary">
+                    <svg width="12" height="12">
+                        <use xlink:href="./img/sprites.svg#icon-add"></use>
+                    </svg>
+                    <span class="ui-text ui-text--weight-700 ui-text--size-xs">создать заказ</span>
+                </button>
+                <div class="account__group">
+                    <ul class="account__menu account-menu">
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-order"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Мои
+                                заказы</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-reload"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link  ui-text ui-text--weight-500 ui-text--size-s">Автоуслуги</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-list-details"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Интервальные
+                                заказы</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-list-details"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Постепенные
+                                заказы</a>
+                        </li>
+                    </ul>
+                    <div class="account__separator"></div>
+                    <ul class="account__menu account-menu">
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-referral"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Реф.
+                                программа</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-notifications"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Центр
+                                уведомлений</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-history"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">История
+                                баланса</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-settings"></use>
+                                </svg>
+                            </div>
+                            <a href="#"
+                               class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Настройки</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-support"></use>
+                                </svg>
+                            </div>
+                            <a href="#"
+                               class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Поддержка</a>
+                        </li>
+                    </ul>
+                    <div class="account__separator"></div>
+                    <ul class="account__menu account-menu">
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-logout"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Выйти</a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <div class="account__content">
+                <div class="account__head">
+                    <div class="account__info">
+                        <h1 class="account__title ui-text ui-text--weight-700 ui-text--size-xxl">Центр уведомлений</h1>
+                        <p class="account__text ui-text ui-text--weight-500 ui-text--size-m">Отслеживайте новости платформы и обновления по Вашим услугам</p>
+                    </div>
+                </div>
+                <div class="account-notification">
+                    <div class="account-notification__filter">
+                        <div class="account-notification__tabs">
+                            <button class="account-notification__tab account-notification__tab--is-active">
+                                <span class="ui-text ui-text--size-s">Все</span>
+                            </button>
+                            <button class="account-notification__tab">
+                                <span class="ui-text ui-text--size-s">Новости и обновления</span>
+                            </button>
+                            <button class="account-notification__tab">
+                                <span class="ui-text ui-text--size-s">История действий</span>
+                            </button>
+                        </div>
+                        <div class="account-notification__actions">
+                            <div class="account-notification__date">
+                                <input type="text" name="date" id="date-input" class="account-notification__input date datepicker-input ui-text ui-text--weight-500 ui-text--size-s" placeholder="12.01.2026">
+                                <svg width="20" href="20">
+                                    <use xlink:href="./img/sprites.svg#icon-calendar"></use>
+                                </svg>
+                            </div>
+                            <button class="account-notification__btn button-main button-main--theme-primary">
+                                <span class="ui-text ui-text--weight-700 ui-text--size-xs">Фильтр</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="account-notification__content">
+                        <div class="account-notification__items account-notification__items--is-active" data-index="0">
+                            <div class="account-notification__item account-notification-item">
+                                <div class="account-notification-item__head">
+                                    <p class="account-notification-item__title ui-text ui-text--weight-700 ui-text--size-m">Изменение лимитов услуги</p>
+                                    <span class="account-notification-item__time ui-text ui-text--weight-500 ui-text--size-xxs">2 мин назад</span>
+                                </div>
+                                <div class="account-notification-item__description ui-text ui-text--weight-500 ui-text--size-xs">
+                                    <p>Лимиты услуги "740. Отзывы Google Map | 5 звезд + комментарии" (категория: Google / Google - Отзывы) изменились. Мин: 1 → 1, Макс: 10000 → 1000</p>
+                                </div>
+                                <span class="account-notification-item__time ui-text ui-text--weight-500 ui-text--size-xxs">2 мин назад</span>
+                            </div>
+                            <div class="account-notification__item account-notification-item">
+                                <div class="account-notification-item__head">
+                                    <p class="account-notification-item__title ui-text ui-text--weight-700 ui-text--size-m">Изменение цены услуг</p>
+                                    <span class="account-notification-item__time ui-text ui-text--weight-500 ui-text--size-xxs">10 мин назад</span>
+                                </div>
+                                <div class="account-notification-item__description ui-text ui-text--weight-500 ui-text--size-xs">
+                                    <p>Цена услуги "740. Отзывы Google Map | 5 звезд + комментарии" (категория: Google / Google - Отзывы) изменилась с 1,400.00 до 1,000.00</p>
+                                </div>
+                                <span class="account-notification-item__time ui-text ui-text--weight-500 ui-text--size-xxs">10 мин назад</span>
+                            </div>
+                            <div class="account-notification__item account-notification-item">
+                                <div class="account-notification-item__head">
+                                    <p class="account-notification-item__title ui-text ui-text--weight-700 ui-text--size-m">Дорогие клиенты, партнёры и друзья!</p>
+                                    <span class="account-notification-item__time ui-text ui-text--weight-500 ui-text--size-xxs">1  мес назад</span>
+                                </div>
+                                <div class="account-notification-item__description ui-text ui-text--weight-500 ui-text--size-xs">
+                                    <p>🎄 Команда Nakrutochka поздравляет вас с Новым годом! 🍊🎇</p>
+                                    <p>Пусть 2026 год принесёт стабильный рост, уверенность в принятых решениях и бесперебойную работу в выбранной нише 🎁</p>
+                                    <p>Мы продолжим развивать нашу платформу, делая её ещё более удобной и функциональной для вас.</p>
+                                    <p>Наша служба поддержки будет работать в обычном режиме в праздничные дни — ежедневно с 09:00 до 22:00.</p>
+                                </div>
+                                <span class="account-notification-item__time ui-text ui-text--weight-500 ui-text--size-xxs">1  мес назад</span>
+                            </div>
+                            <div class="account-notification__item account-notification-item">
+                                <div class="account-notification-item__head">
+                                    <p class="account-notification-item__title ui-text ui-text--weight-700 ui-text--size-m">Услуга отключена</p>
+                                    <span class="account-notification-item__time ui-text ui-text--weight-500 ui-text--size-xxs">12:30 12.01.2026</span>
+                                </div>
+                                <div class="account-notification-item__description ui-text ui-text--weight-500 ui-text--size-xs">
+                                    <p>Услуга "552. Просмотры прямой трансляции | 120 минут" (категория: ТикТок / Прямые трансляции) временно недоступна</p>
+                                </div>
+                                <span class="account-notification-item__time ui-text ui-text--weight-500 ui-text--size-xxs">12:30 12.01.2026</span>
+                            </div>
+                        </div>
+                        <div class="account-notification__items" data-index="1">
+                            <div class="account-notification__item account-notification-item">
+                                <div class="account-notification-item__head">
+                                    <p class="account-notification-item__title ui-text ui-text--weight-700 ui-text--size-m">Дорогие клиенты, партнёры и друзья!</p>
+                                    <span class="account-notification-item__time ui-text ui-text--weight-500 ui-text--size-xxs">1  мес назад</span>
+                                </div>
+                                <div class="account-notification-item__description ui-text ui-text--weight-500 ui-text--size-xs">
+                                    <p>🎄 Команда Nakrutochka поздравляет вас с Новым годом! 🍊🎇</p>
+                                    <p>Пусть 2026 год принесёт стабильный рост, уверенность в принятых решениях и бесперебойную работу в выбранной нише 🎁</p>
+                                    <p>Мы продолжим развивать нашу платформу, делая её ещё более удобной и функциональной для вас.</p>
+                                    <p>Наша служба поддержки будет работать в обычном режиме в праздничные дни — ежедневно с 09:00 до 22:00.</p>
+                                </div>
+                                <span class="account-notification-item__time ui-text ui-text--weight-500 ui-text--size-xxs">1  мес назад</span>
+                            </div>
+                        </div>
+                        <div class="account-notification__items" data-index="2">
+                            <div class="account-notification__item account-notification-item">
+                                <div class="account-notification-item__head">
+                                    <p class="account-notification-item__title ui-text ui-text--weight-700 ui-text--size-m">Услуга отключена</p>
+                                    <span class="account-notification-item__time ui-text ui-text--weight-500 ui-text--size-xxs">12:30 12.01.2026</span>
+                                </div>
+                                <div class="account-notification-item__description ui-text ui-text--weight-500 ui-text--size-xs">
+                                    <p>Услуга "552. Просмотры прямой трансляции | 120 минут" (категория: ТикТок / Прямые трансляции) временно недоступна</p>
+                                </div>
+                                <span class="account-notification-item__time ui-text ui-text--weight-500 ui-text--size-xxs">12:30 12.01.2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@@include('./common/footer.html')
