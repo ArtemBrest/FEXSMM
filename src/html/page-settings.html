@@ -1,0 +1,239 @@
+@@include('./common/header.html')
+<section class="account mb-100">
+    <div class="container">
+        <div class="account__wrapper">
+            <aside class="account__aside account-aside">
+                <div class="account__wallet account-wallet">
+                    <div class="account-wallet__box">
+                        <svg class="account-wallet__icon">
+                            <use xlink:href="./img/sprites.svg#icon-wallet"></use>
+                        </svg>
+                    </div>
+                    <div class="account-wallet__info">
+                        <span class="account-wallet__title ui-text ui-text--weight-500 ui-text--size-xs">Баланс</span>
+                        <span class="account-wallet__balance ui-text--weight-700 ui-text--size-l">199.99 $</span>
+                    </div>
+                    <button class="account-wallet__deposit">
+                        <svg class="account-wallet__deposit-ico">
+                            <use xlink:href="./img/sprites.svg#icon-add"></use>
+                        </svg>
+                    </button>
+                </div>
+                <button class="account__order button-main button-main--theme-primary">
+                    <svg width="12" height="12">
+                        <use xlink:href="./img/sprites.svg#icon-add"></use>
+                    </svg>
+                    <span class="ui-text ui-text--weight-700 ui-text--size-xs">создать заказ</span>
+                </button>
+                <div class="account__group">
+                    <ul class="account__menu account-menu">
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-order"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Мои
+                                заказы</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-reload"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link  ui-text ui-text--weight-500 ui-text--size-s">Автоуслуги</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-list-details"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Интервальные
+                                заказы</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-list-details"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Постепенные
+                                заказы</a>
+                        </li>
+                    </ul>
+                    <div class="account__separator"></div>
+                    <ul class="account__menu account-menu">
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-referral"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Реф.
+                                программа</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-notifications"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Центр
+                                уведомлений</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-history"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">История
+                                баланса</a>
+                        </li>
+                        <li class="account-menu__li account-menu__li--is-active">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-settings"></use>
+                                </svg>
+                            </div>
+                            <a href="#"
+                               class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Настройки</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-support"></use>
+                                </svg>
+                            </div>
+                            <a href="#"
+                               class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Поддержка</a>
+                        </li>
+                    </ul>
+                    <div class="account__separator"></div>
+                    <ul class="account__menu account-menu">
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-logout"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Выйти</a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <div class="account__content">
+                <div class="account__head">
+                    <h1 class="account__title ui-text ui-text--weight-700 ui-text--size-xxl">Настройки</h1>
+                </div>
+                <div class="account-settings">
+                    <div class="account-settings__wrapper">
+                        <div class="account-settings__column account-settings__column--first">
+                            <form class="account-settings__form account-settings-form">
+                                <h2 class="account-settings-form__title ui-text ui-text--weight-700 ui-text--size-l">Персональная информация</h2>
+                                <div class="account-settings-form__wrapper">
+                                    <div class="account-settings-form__item">
+                                        <label for="account-settings-login" class="account-settings-form__label ui-text ui-text--uppercase ui-text--weight-500 ui-text--size-xxxs">Имя</label>
+                                        <input name="login" type="text" id="account-settings-login" placeholder="Username" value="Username" class="account-settings-form__input ui-text ui-text--weight-500 ui-text--size-xs">
+                                        <div class="account-settings-form__copy">
+                                            <svg>
+                                                <use xlink:href="./img/sprites.svg#icon-copy"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="account-settings-form__item">
+                                        <label for="account-settings-tg" class="account-settings-form__label ui-text ui-text--uppercase ui-text--weight-500 ui-text--size-xxxs">Telegram</label>
+                                        <input name="tg" type="text" id="account-settings-tg" placeholder="@Username" value="@Username" class="account-settings-form__input ui-text ui-text--weight-500 ui-text--size-xs">
+                                        <div class="account-settings-form__copy">
+                                            <svg>
+                                                <use xlink:href="./img/sprites.svg#icon-copy"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="account-settings-form__item">
+                                        <label for="account-settings-email" class="account-settings-form__label ui-text ui-text--uppercase ui-text--weight-500 ui-text--size-xxxs">Email</label>
+                                        <input name="email" type="text" id="account-settings-email" placeholder="username@gmail.com" value="username@gmail.com" class="account-settings-form__input ui-text ui-text--weight-500 ui-text--size-xs">
+                                        <div class="account-settings-form__copy">
+                                            <svg>
+                                                <use xlink:href="./img/sprites.svg#icon-copy"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <button class="account-settings-form__btn button-main button-main--theme-primary">
+                                        <span class="ui-text ui-text--weight-700 ui-text--size-xs">Сохранить</span>
+                                    </button>
+                                </div>
+                            </form>
+                            <form class="account-settings__form account-settings-form">
+                                <h2 class="account-settings-form__title ui-text ui-text--weight-700 ui-text--size-l">API</h2>
+                                <div class="account-settings-form__wrapper">
+                                    <div class="account-settings-form__item">
+                                        <label for="account-settings-api" class="account-settings-form__label ui-text ui-text--uppercase ui-text--weight-500 ui-text--size-xxxs">Имя</label>
+                                        <input name="api" type="text" id="account-settings-api" placeholder="loremipsum123456789" value="loremipsum123456789" class="account-settings-form__input ui-text ui-text--weight-500 ui-text--size-xs">
+                                        <div class="account-settings-form__copy">
+                                            <svg>
+                                                <use xlink:href="./img/sprites.svg#icon-copy"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <button class="account-settings-form__btn button-main button-main--theme-primary">
+                                        <span class="ui-text ui-text--weight-700 ui-text--size-xs">Создать новый ключ</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="account-settings__column">
+                            <form class="account-settings__form account-settings-form" data-da=".account-settings__column--first,1025,1">
+                                <h2 class="account-settings-form__title ui-text ui-text--weight-700 ui-text--size-l">Изменить пароль</h2>
+                                <div class="account-settings-form__wrapper">
+                                    <div class="account-settings-form__item account-settings-form__item--is-disabled">
+                                        <label for="account-settings-user" class="account-settings-form__label ui-text ui-text--uppercase ui-text--weight-500 ui-text--size-xxxs">Email</label>
+                                        <input name="login" type="text" id="account-settings-user" placeholder="Username" value="Username" class="account-settings-form__input ui-text ui-text--weight-500 ui-text--size-xs" disabled>
+                                        <div class="account-settings-form__copy">
+                                            <svg>
+                                                <use xlink:href="./img/sprites.svg#icon-copy"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="account-settings-form__item account-settings-form__item--is-disabled">
+                                        <label for="account-settings-password-old" class="account-settings-form__label ui-text ui-text--uppercase ui-text--weight-500 ui-text--size-xxxs">Старый пароль</label>
+                                        <input name="password-old" type="password" id="account-settings-password-old" value="Username" class="account-settings-form__input ui-text ui-text--weight-500 ui-text--size-xs" disabled>
+                                        <div class="auth-form__visible">
+                                            <svg>
+                                                <use xlink:href="./img/sprites.svg#icon-eye"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="account-settings-form__item account-settings-form__item--is-disabled">
+                                        <label for="account-settings-password-new" class="account-settings-form__label ui-text ui-text--uppercase ui-text--weight-500 ui-text--size-xxxs">Новый пароль</label>
+                                        <input name="password-new" type="password" id="account-settings-password-new" value="Username123" class="account-settings-form__input ui-text ui-text--weight-500 ui-text--size-xs" disabled>
+                                        <div class="auth-form__visible">
+                                            <svg>
+                                                <use xlink:href="./img/sprites.svg#icon-eye"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="account-settings-form__item account-settings-form__item--is-disabled">
+                                        <label for="account-settings-password-confirm" class="account-settings-form__label ui-text ui-text--uppercase ui-text--weight-500 ui-text--size-xxxs">Подтверждение пароля</label>
+                                        <input name="password-confirm" type="password" id="account-settings-password-confirm" value="Username123" class="account-settings-form__input ui-text ui-text--weight-500 ui-text--size-xs" disabled>
+                                        <div class="auth-form__visible">
+                                            <svg>
+                                                <use xlink:href="./img/sprites.svg#icon-eye"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <button class="account-settings-form__btn button-main button-main--theme-primary" disabled>
+                                        <span class="ui-text ui-text--weight-700 ui-text--size-xs">Сохранить</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@@include('./common/footer.html')

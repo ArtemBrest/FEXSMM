@@ -449,6 +449,46 @@ window.addEventListener("load", function () {
         body.classList.remove("body--no-scroll");
     });*/
 
+    const copyButtons = document.querySelectorAll('.account-settings-form__copy');
+
+    if (!isEmptyObject(copyButtons)) {
+        copyButtons.forEach(btn => {
+            btn.addEventListener('click', async () => {
+                const input = btn.parentElement.querySelector('input');
+
+                if (!input || input.disabled) return;
+
+                const value = input.value.trim();
+                if (!value) return;
+
+                try {
+                    await navigator.clipboard.writeText(value);
+                    showTooltip(btn, 'Скопировано');
+                } catch (err) {
+                    console.error('Ошибка копирования:', err);
+                }
+            });
+        });
+    }
+
+    // функция тултипа
+    function showTooltip(el, text) {
+        let tooltip = el.querySelector('.copy-tooltip');
+
+        if (!tooltip) {
+            tooltip = document.createElement('div');
+            tooltip.className = 'copy-tooltip';
+            el.appendChild(tooltip);
+        }
+
+        tooltip.textContent = text;
+        tooltip.classList.add('copy-tooltip--is-active');
+
+        setTimeout(() => {
+            tooltip.classList.remove('copy-tooltip--is-active');
+        }, 1500);
+    }
+
 
     const passwordToggles = document.querySelectorAll('.auth-form__visible');
     if (!isEmptyObject(passwordToggles)) {
@@ -456,7 +496,7 @@ window.addEventListener("load", function () {
             toggle.addEventListener('click', () => {
                 const input = toggle.parentElement.querySelector('input');
 
-                if (!input) return;
+                if (!input || input.disabled) return;
 
                 input.type = input.type === 'password' ? 'text' : 'password';
                 toggle.classList.toggle('auth-form__visible-is-active');

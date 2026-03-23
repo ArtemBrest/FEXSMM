@@ -1,0 +1,252 @@
+@@include('./common/header.html')
+<section class="account mb-100">
+    <div class="container">
+        <div class="account__wrapper">
+            <aside class="account__aside account-aside">
+                <div class="account__wallet account-wallet">
+                    <div class="account-wallet__box">
+                        <svg class="account-wallet__icon">
+                            <use xlink:href="./img/sprites.svg#icon-wallet"></use>
+                        </svg>
+                    </div>
+                    <div class="account-wallet__info">
+                        <span class="account-wallet__title ui-text ui-text--weight-500 ui-text--size-xs">Баланс</span>
+                        <span class="account-wallet__balance ui-text--weight-700 ui-text--size-l">199.99 $</span>
+                    </div>
+                    <button class="account-wallet__deposit">
+                        <svg class="account-wallet__deposit-ico">
+                            <use xlink:href="./img/sprites.svg#icon-add"></use>
+                        </svg>
+                    </button>
+                </div>
+                <button class="account__order button-main button-main--theme-primary">
+                    <svg width="12" height="12">
+                        <use xlink:href="./img/sprites.svg#icon-add"></use>
+                    </svg>
+                    <span class="ui-text ui-text--weight-700 ui-text--size-xs">создать заказ</span>
+                </button>
+                <div class="account__group">
+                    <ul class="account__menu account-menu">
+                        <li class="account-menu__li account-menu__li--is-active">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-order"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Мои
+                                заказы</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-reload"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link  ui-text ui-text--weight-500 ui-text--size-s">Автоуслуги</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-list-details"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Интервальные
+                                заказы</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-list-details"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Постепенные
+                                заказы</a>
+                        </li>
+                    </ul>
+                    <div class="account__separator"></div>
+                    <ul class="account__menu account-menu">
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-referral"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Реф.
+                                программа</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-notifications"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Центр
+                                уведомлений</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-history"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">История
+                                баланса</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-settings"></use>
+                                </svg>
+                            </div>
+                            <a href="#"
+                               class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Настройки</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-support"></use>
+                                </svg>
+                            </div>
+                            <a href="#"
+                               class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Поддержка</a>
+                        </li>
+                    </ul>
+                    <div class="account__separator"></div>
+                    <ul class="account__menu account-menu">
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-logout"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Выйти</a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <div class="account__content">
+                <div class="account__head">
+                    <div class="account__info">
+                        <h1 class="account__title ui-text ui-text--weight-700 ui-text--size-xxl">Мои заказы</h1>
+                        <p class="account__text ui-text ui-text--weight-500 ui-text--size-m">Наша команда готова помочь Вам 24/7</p>
+                    </div>
+
+                    <div class="account__filter">
+                        <div class="account__select account-select">
+                            <div class="account-select__field">
+                                <span class="account-select__value ui-text ui-text--weight-500 ui-text--size-s">ID</span>
+                                <svg class="account-select__icon" width="12" height="12">
+                                    <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                                </svg>
+                            </div>
+                            <div class="account-select__wrapper">
+                                <ul class="account-select__list">
+                                    <li class="account-select__item ui-text ui-text--weight-500 ui-text--size-s account-select__item--is-active">
+                                        ID
+                                    </li>
+                                    <li class="account-select__item ui-text ui-text--weight-500 ui-text--size-s">Name
+                                    </li>
+                                    <li class="account-select__item ui-text ui-text--weight-500 ui-text--size-s">Date
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="account__search account-search">
+                            <input type="text" name="search" placeholder="Введите значение"
+                                   class="account-search__field ui-text ui-text--weight-500 ui-text--size-s">
+                            <button class="account-search__btn">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-search"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="account-order account-support">
+                    <div class="account-support__row">
+                        <button class="account-support__btn button-main button-main--theme-primary">
+                            <svg width="12" height="12">
+                                <use xlink:href="./img/sprites.svg#icon-add"></use>
+                            </svg>
+                            <span class="ui-text ui-text--weight-700 ui-text--size-xs">Новый тикет</span>
+                        </button>
+                    </div>
+                    <div class="account-support__list">
+                        <div class="account-history-item">
+                            <div class="account-history-item__head">
+                                <span class="ui-text ui-text--weight-500">17.02.2026 14:00</span>
+                                <p class="account-history-item__order ui-text ui-text--weight-500 ui-text--size-xs">
+                                    <span>Заказ</span>
+                                    <span class="account-history-item__order-id ui-text ui-text--weight-700">ID: №000001</span>
+                                </p>
+                            </div>
+                            <div class="account-history-item__main">
+                                <div class="account-history-item__info">
+                                    <p class="account-history-item__text ui-text ui-text--weight-500 ui-text--size-xs">829. Views for the latest 5 posts</p>
+                                    <a href="https://t.me/post00000001" class="account-history-item__link ui-text ui-text--weight-500 ui-text--size-xs">https://t.me/post00000001</a>
+                                </div>
+                            </div>
+                            <div class="account-history-item__footer">
+                                <div class="account-history-item__status account-history-item__status--replenishment ui-text ui-text--weight-500 ui-text--size-xxs">
+                                    <span>✅</span>
+                                    <span>Завершено</span>
+                                </div>
+
+                                <a href="#" class="account-history-item__more">
+                                    <span class="ui-text ui-text--weight-500 ui-text--size-s">Подробнее</span>
+                                    <svg width="16" height="16" class="account-history-item__more-icon">
+                                        <use xlink:href="./img/sprites.svg#icon-arrow-more"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="account-order__footer">
+                        <button class="account-order__btn account-order__btn--disabled account-order__btn--prev"
+                                disabled>
+                            <span class="account-order__btn-ico">
+                                <svg>
+                                    <use xlink:href="./img/sprites.svg#icon-arrow-left"></use>
+                                </svg>
+                            </span>
+                            <span class="account-order__btn-label ui-text ui-text--weight-500 ui-text--size-xs">Предыдущая</span>
+                        </button>
+                        <div class="account-order__count account-order-count">
+                            <div class="account-order-count__select account-select">
+                                <div class="account-select__field">
+                                    <span class="account-select__value ui-text ui-text--weight-500 ui-text--size-s">10</span>
+                                    <svg class="account-select__icon" width="12" height="12">
+                                        <use xlink:href="./img/sprites.svg#icon-arrow"></use>
+                                    </svg>
+                                </div>
+                                <div class="account-select__wrapper">
+                                    <ul class="account-select__list">
+                                        <li class="account-select__item ui-text ui-text--weight-500 ui-text--size-s account-select__item--is-active">
+                                            10
+                                        </li>
+                                        <li class="account-select__item ui-text ui-text--weight-500 ui-text--size-s">
+                                            20
+                                        </li>
+                                        <li class="account-select__item ui-text ui-text--weight-500 ui-text--size-s">
+                                            50
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <span class="account-order-count__name ui-text ui-text--weight-500 ui-text--size-xxs">Показано 8 из 100</span>
+                        </div>
+                        <button class="account-order__btn account-order__btn--prev">
+                            <span class="account-order__btn-label ui-text ui-text--weight-500 ui-text--size-xs">Следующая</span>
+                            <span class="account-order__btn-ico">
+                                <svg>
+                                    <use xlink:href="./img/sprites.svg#icon-arrow-right"></use>
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@@include('./common/footer.html')
