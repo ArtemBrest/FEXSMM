@@ -1,10 +1,191 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+@@include('./common/header.html')
+<section class="account mb-100">
+    <div class="container">
+        <div class="account__wrapper">
+            <aside class="account__aside account-aside">
+                <div class="account__wallet account-wallet">
+                    <div class="account-wallet__box">
+                        <svg class="account-wallet__icon">
+                            <use xlink:href="./img/sprites.svg#icon-wallet"></use>
+                        </svg>
+                    </div>
+                    <div class="account-wallet__info">
+                        <span class="account-wallet__title ui-text ui-text--weight-500 ui-text--size-xs">Баланс</span>
+                        <span class="account-wallet__balance ui-text--weight-700 ui-text--size-l">199.99 $</span>
+                    </div>
+                    <button class="account-wallet__deposit">
+                        <svg class="account-wallet__deposit-ico">
+                            <use xlink:href="./img/sprites.svg#icon-add"></use>
+                        </svg>
+                    </button>
+                </div>
+                <button class="account__order button-main button-main--theme-primary">
+                    <svg width="12" height="12">
+                        <use xlink:href="./img/sprites.svg#icon-add"></use>
+                    </svg>
+                    <span class="ui-text ui-text--weight-700 ui-text--size-xs">создать заказ</span>
+                </button>
+                <div class="account__group">
+                    <ul class="account__menu account-menu">
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-order"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Мои
+                                заказы</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-reload"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link  ui-text ui-text--weight-500 ui-text--size-s">Автоуслуги</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-list-details"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Интервальные
+                                заказы</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-list-details"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Постепенные
+                                заказы</a>
+                        </li>
+                    </ul>
+                    <div class="account__separator"></div>
+                    <ul class="account__menu account-menu">
+                        <li class="account-menu__li account-menu__li--is-active">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-referral"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Реф.
+                                программа</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-notifications"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Центр
+                                уведомлений</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-history"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">История
+                                баланса</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-settings"></use>
+                                </svg>
+                            </div>
+                            <a href="#"
+                               class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Настройки</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-support"></use>
+                                </svg>
+                            </div>
+                            <a href="#"
+                               class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Поддержка</a>
+                        </li>
+                    </ul>
+                    <div class="account__separator"></div>
+                    <ul class="account__menu account-menu">
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-logout"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Выйти</a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <div class="account__content">
+                <div class="account__head">
+                    <div class="account__info">
+                        <h1 class="account__title ui-text ui-text--weight-700 ui-text--size-xxl">Реферальная программа</h1>
+                    </div>
+                </div>
+                <div class="account-notification account-referral">
+                    <div class="account-referral__advantages">
+                        <div class="account-referral-card account-referral-card--is-active">
+                            <p class="account-referral-card__value ui-text ui-text--weight-700 ui-text--size-xxxl">100%</p>
+                            <p class="account-referral-card__title ui-text ui-text--weight-500 ui-text--size-s">Реферальный процент</p>
+                        </div>
+                        <div class="account-referral-card">
+                            <p class="account-referral-card__value ui-text ui-text--weight-700 ui-text--size-xxxl">$ 0.00</p>
+                            <p class="account-referral-card__title ui-text ui-text--weight-500 ui-text--size-s">Текущий баланс</p>
+                        </div>
+                        <div class="account-referral-card">
+                            <p class="account-referral-card__value ui-text ui-text--weight-700 ui-text--size-xxxl">$ 0.00</p>
+                            <p class="account-referral-card__title ui-text ui-text--weight-500 ui-text--size-s">Всего заработано</p>
+                        </div>
+                    </div>
+                    <div class="account-referral__group">
+                        <div class="account-referral__item">
+                            <label for="account-referral-link" class="account-referral__label ui-text ui-text--weight-500 ui-text--size-m">Ваша реферальная ссылка</label>
+                            <input name="api" type="text" id="account-referral-link" placeholder="https://t.me/username/1000" value="https://t.me/username/1000" class="account-referral__input ui-text ui-text--weight-500 ui-text--size-xs">
+                            <div class="account-referral__copy btn-copy">
+                                <svg>
+                                    <use xlink:href="./img/sprites.svg#icon-copy"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="account-notification__tabs account-referral__tabs">
+                        <button class="account-notification__tab account-notification__tab--is-full account-notification__tab--is-active">
+                            <span class="ui-text ui-text--size-s">Рефералы</span>
+                        </button>
+                        <button class="account-notification__tab account-notification__tab--is-full">
+                            <span class="ui-text ui-text--size-s">Выплаты</span>
+                        </button>
+                    </div>
+                    <div class="account-notification__content">
+                        <div class="account-notification__items account-notification__items--is-active" data-index="0">
+                            <div class="account-referral-item">
+                                <div class="account-referral-item__head">
+                                    <h2 class="account-referral-item__title ui-text ui-text--weight-700 ui-text--size-xl">Список рефералов</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="account-notification__items" data-index="1">
+                            <div class="account-referral-item">
+                                <div class="account-referral-item__head">
+                                    <h2 class="account-referral-item__title ui-text ui-text--weight-700 ui-text--size-xl">История выплат</h2>
+                                    <button class="account-referral-item__btn button-main button-main--theme-transparent">
+                                        <span class="ui-text ui-text--weight-700 ui-text--size-xxs">Запросить выплату</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@@include('./common/footer.html')

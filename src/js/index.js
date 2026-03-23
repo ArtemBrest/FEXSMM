@@ -449,8 +449,7 @@ window.addEventListener("load", function () {
         body.classList.remove("body--no-scroll");
     });*/
 
-    const copyButtons = document.querySelectorAll('.account-settings-form__copy');
-
+    const copyButtons = document.querySelectorAll('.btn-copy');
     if (!isEmptyObject(copyButtons)) {
         copyButtons.forEach(btn => {
             btn.addEventListener('click', async () => {

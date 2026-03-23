@@ -5173,6 +5173,149 @@ button:hover {
   }
 }
 
+.account-referral {
+  &__advantages {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+  }
+
+  &__group {
+    padding: 40px 40px 34px;
+    border-radius: var(--border-radius--size-xl);
+    background-color: var(--gradient-primary);
+    margin-bottom: 40px;
+
+    @media (max-width: 1024px) {
+      padding: 28px 20px;
+    }
+  }
+
+  &__item {
+    display: grid;
+    gap: 16px;
+    position: relative;
+
+    @media (max-width: 1024px) {
+      gap: 24px;
+    }
+
+    .copy-tooltip {
+      display: none;
+      opacity: 0;
+      position: absolute;
+      right: -15px;
+      top: -35px;
+      font-size: 11px;
+      line-height: 11px;
+      white-space: nowrap;
+      padding: 2px 6px;
+      background-color: var(--color-text-inverse);
+      border-radius: var(--border-radius--size-s);
+      color: var(--color-accent-primary);
+      pointer-events: none;
+
+      &--is-active {
+        display: block;
+        opacity: 1;
+      }
+    }
+  }
+
+  &__label {
+    color: var(--color-text-inverse);
+  }
+
+  &__input {
+    height: 64px;
+    width: 100%;
+    padding: 16px 40px 16px 16px;
+    border-radius: var(--border-radius--size-m);
+    background-color: transparent;
+    color: var(--color-text-inverse);
+    border: 1px solid var(--color-bg-tertiary);
+
+    &::placeholder {
+      color: var(--color-text-inverse);
+    }
+  }
+
+  &__copy {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-inverse);
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__tabs {
+    margin-bottom: 40px;
+
+    @media (max-width: 1024px) {
+      margin-bottom: 32px;
+    }
+  }
+}
+
+.account-referral-card {
+  padding: 32px;
+  display: grid;
+  gap: 14px;
+  border-radius: var(--border-radius--size-xl);
+  background-color: var(--color-text-inverse);
+  border: 1px solid var(--color-text-inverse);
+
+  &--is-active {
+    background-color: var(--color-bg-secondary);
+    border-color: var(--color-accent-primary);
+  }
+
+  @media (max-width: 1024px) {
+    padding: 28px;
+  }
+
+  &__value {
+    color: var(--color-accent-primary);
+  }
+}
+
+.account-referral-item {
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  &__title {
+    flex-shrink: 0;
+  }
+
+  &__btn {
+    --button-main-y: 17px;
+    --button-main-x: 38px;
+
+    min-height: 49px;
+  }
+}
+
 .account-notification {
   &__filter {
     display: flex;
@@ -5216,6 +5359,10 @@ button:hover {
         color: var(--color-accent-primary);
         border-color: var(--color-accent-primary);
       }
+    }
+
+    &--is-full {
+      flex-grow: 1;
     }
 
     &--is-active {
