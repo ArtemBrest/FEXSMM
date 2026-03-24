@@ -449,6 +449,62 @@ window.addEventListener("load", function () {
         body.classList.remove("body--no-scroll");
     });*/
 
+    const depositBlocks = document.querySelectorAll('.account-deposit-amount');
+    if (!isEmptyObject(depositBlocks)) {
+        depositBlocks.forEach(block => {
+            const input = block.querySelector('.account-deposit-amount__input');
+            const buttons = block.querySelectorAll('.account-deposit-amount__btn');
+            const ACTIVE_CLASS = 'account-deposit-amount__btn--is-active';
+
+            if (!input || isEmptyObject(buttons)) return;
+
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const value = btn.innerText.trim();
+                    input.value = value;
+
+                    buttons.forEach(b => b.classList.remove(ACTIVE_CLASS));
+                    btn.classList.add(ACTIVE_CLASS);
+                });
+            });
+            input.addEventListener('input', () => {
+                input.value = input.value.replace(/\D/g, '');
+
+                const currentValue = input.value;
+                let hasMatch = false;
+                buttons.forEach(btn => {
+                    const btnValue = btn.innerText.trim();
+                    if (btnValue === currentValue && currentValue !== '') {
+                        btn.classList.add(ACTIVE_CLASS);
+                        hasMatch = true;
+                    } else {
+                        btn.classList.remove(ACTIVE_CLASS);
+                    }
+                });
+                if (!hasMatch) {
+                    buttons.forEach(b => b.classList.remove(ACTIVE_CLASS));
+                }
+            });
+
+            input.addEventListener('blur', () => {
+                let value = parseInt(input.value, 10);
+                if (!value || value < 1) {
+                    input.value = 1;
+                }
+
+                const currentValue = input.value;
+                buttons.forEach(btn => {
+                    const btnValue = btn.innerText.trim();
+                    if (btnValue === currentValue) {
+                        btn.classList.add(ACTIVE_CLASS);
+                    } else {
+                        btn.classList.remove(ACTIVE_CLASS);
+                    }
+                });
+            });
+        });
+    }
+
     const copyButtons = document.querySelectorAll('.btn-copy');
     if (!isEmptyObject(copyButtons)) {
         copyButtons.forEach(btn => {

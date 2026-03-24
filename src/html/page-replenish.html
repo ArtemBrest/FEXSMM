@@ -1,10 +1,352 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+@@include('./common/header.html')
+<section class="account mb-100">
+    <div class="container">
+        <div class="account__wrapper">
+            <aside class="account__aside account-aside">
+                <div class="account__wallet account-wallet">
+                    <div class="account-wallet__box">
+                        <svg class="account-wallet__icon">
+                            <use xlink:href="./img/sprites.svg#icon-wallet"></use>
+                        </svg>
+                    </div>
+                    <div class="account-wallet__info">
+                        <span class="account-wallet__title ui-text ui-text--weight-500 ui-text--size-xs">Баланс</span>
+                        <span class="account-wallet__balance ui-text--weight-700 ui-text--size-l">199.99 $</span>
+                    </div>
+                    <button class="account-wallet__deposit">
+                        <svg class="account-wallet__deposit-ico">
+                            <use xlink:href="./img/sprites.svg#icon-add"></use>
+                        </svg>
+                    </button>
+                </div>
+                <button class="account__order button-main button-main--theme-primary">
+                    <svg width="12" height="12">
+                        <use xlink:href="./img/sprites.svg#icon-add"></use>
+                    </svg>
+                    <span class="ui-text ui-text--weight-700 ui-text--size-xs">создать заказ</span>
+                </button>
+                <div class="account__group">
+                    <ul class="account__menu account-menu">
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-order"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Мои
+                                заказы</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-reload"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link  ui-text ui-text--weight-500 ui-text--size-s">Автоуслуги</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-list-details"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Интервальные
+                                заказы</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-list-details"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Постепенные
+                                заказы</a>
+                        </li>
+                    </ul>
+                    <div class="account__separator"></div>
+                    <ul class="account__menu account-menu">
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-referral"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Реф.
+                                программа</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-notifications"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Центр
+                                уведомлений</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-history"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">История
+                                баланса</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-settings"></use>
+                                </svg>
+                            </div>
+                            <a href="#"
+                               class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Настройки</a>
+                        </li>
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-support"></use>
+                                </svg>
+                            </div>
+                            <a href="#"
+                               class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Поддержка</a>
+                        </li>
+                    </ul>
+                    <div class="account__separator"></div>
+                    <ul class="account__menu account-menu">
+                        <li class="account-menu__li">
+                            <div class="account-menu__icon">
+                                <svg width="24" height="24">
+                                    <use xlink:href="./img/sprites.svg#icon-logout"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Выйти</a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <div class="account__content">
+                <div class="account__head">
+                    <div class="account__info">
+                        <h1 class="account__title ui-text ui-text--weight-700 ui-text--size-xxl">Пополнить счет</h1>
+                        <p class="account__text ui-text ui-text--weight-500 ui-text--size-m">Выберите сумму и способ оплаты для пополнения счета</p>
+                    </div>
+                </div>
+                <div class="account-deposit">
+                    <div class="account-deposit__content">
+                        <div class="account-deposit-banner" data-da=".account-deposit,1025,0">
+                            <img src="../img/png/deposit-banner.png" alt="" class="account-deposit-banner__img">
+                            <p class="account-deposit-banner__title ui-text ui-text--weight-700 ui-text--size-xl">Бонус к депозиту</p>
+                            <p class="account-deposit-banner__text ui-text ui-text--weight-500 ui-text--size-s">Пополните от <b>$100</b> и получите бонус <b>2%</b></p>
+                        </div>
+                        <div class="account-deposit-amount">
+                            <h2 class="account-deposit-amount__title ui-text ui-text--weight-700 ui-text--size-l">Сумма депозита</h2>
+                            <div class="account-deposit-amount__field">
+                                <input type="text" name="sum" class="account-deposit-amount__input ui-text--weight-500 ui-text--size-s" placeholder="Минимум 1">
+                                <span class="account-deposit-amount__currency ui-text--weight-500 ui-text--size-s">USD</span>
+                            </div>
+                            <div class="account-deposit-amount__actions">
+                                <button class="account-deposit-amount__btn">
+                                    <span class="ui-text ui-text--weight-500 ui-text--size-s">10</span>
+                                </button>
+                                <button class="account-deposit-amount__btn">
+                                    <span class="ui-text ui-text--weight-500 ui-text--size-s">50</span>
+                                </button>
+                                <button class="account-deposit-amount__btn">
+                                    <span class="ui-text ui-text--weight-500 ui-text--size-s">100</span>
+                                </button>
+                                <button class="account-deposit-amount__btn">
+                                    <span class="ui-text ui-text--weight-500 ui-text--size-s">200</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="account-deposit-payments">
+                            <h2 class="account-deposit-payments__title ui-text ui-text--weight-700 ui-text--size-l">Способы оплаты</h2>
+                            <div class="account-deposit-payments__items">
+                                <label class="account-deposit-payments-item">
+                                    <input type="radio" name="payments" value="CryptoMate" checked="">
+                                    <span class="account-deposit-payments-item__group">
+                                        <img src="../img/png/payments-logo-1.png" alt="" class="account-deposit-payments-item__logo">
+                                        <span class="account-deposit-payments-item__info">
+                                            <span class="account-deposit-payments-item__title ui-text ui-text--weight-700 ui-text--size-xs">CryptoMate</span>
+                                            <span class="account-deposit-payments-item__limits">
+                                                <span class="account-deposit-payments-item__limit ui-text ui-text--weight-500 ui-text--size-xxxs">
+                                                    <span class="account-deposit-payments-item__label">Мин:</span>
+                                                    <span class="account-deposit-payments-item__value">$1</span>
+                                                </span>
+                                                <span class="account-deposit-payments-item__limit ui-text ui-text--weight-500 ui-text--size-xxxs">
+                                                    <span class="account-deposit-payments-item__label">Макс:</span>
+                                                    <span class="account-deposit-payments-item__value">$10000</span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </label>
+                                <label class="account-deposit-payments-item">
+                                    <input type="radio" name="payments" value="Cards UA (p2p)" checked="">
+                                    <span class="account-deposit-payments-item__group">
+                                        <img src="../img/png/payments-logo-2.png" alt="" class="account-deposit-payments-item__logo">
+                                        <span class="account-deposit-payments-item__info">
+                                            <span class="account-deposit-payments-item__title ui-text ui-text--weight-700 ui-text--size-xs">Cards UA (p2p)</span>
+                                            <span class="account-deposit-payments-item__limits">
+                                                <span class="account-deposit-payments-item__limit ui-text ui-text--weight-500 ui-text--size-xxxs">
+                                                    <span class="account-deposit-payments-item__label">Мин:</span>
+                                                    <span class="account-deposit-payments-item__value">$1</span>
+                                                </span>
+                                                <span class="account-deposit-payments-item__limit ui-text ui-text--weight-500 ui-text--size-xxxs">
+                                                    <span class="account-deposit-payments-item__label">Макс:</span>
+                                                    <span class="account-deposit-payments-item__value">$10000</span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </label>
+                                <label class="account-deposit-payments-item">
+                                    <input type="radio" name="payments" value="Cards RU (NicePay)" checked="">
+                                    <span class="account-deposit-payments-item__group">
+                                        <img src="../img/png/payments-logo-3.png" alt="" class="account-deposit-payments-item__logo">
+                                        <span class="account-deposit-payments-item__info">
+                                            <span class="account-deposit-payments-item__title ui-text ui-text--weight-700 ui-text--size-xs">Cards RU (NicePay)</span>
+                                            <span class="account-deposit-payments-item__limits">
+                                                <span class="account-deposit-payments-item__limit ui-text ui-text--weight-500 ui-text--size-xxxs">
+                                                    <span class="account-deposit-payments-item__label">Мин:</span>
+                                                    <span class="account-deposit-payments-item__value">$1</span>
+                                                </span>
+                                                <span class="account-deposit-payments-item__limit ui-text ui-text--weight-500 ui-text--size-xxxs">
+                                                    <span class="account-deposit-payments-item__label">Макс:</span>
+                                                    <span class="account-deposit-payments-item__value">$10000</span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </label>
+                                <label class="account-deposit-payments-item">
+                                    <input type="radio" name="payments" value="CryptoBot" checked="">
+                                    <span class="account-deposit-payments-item__group">
+                                        <img src="../img/png/payments-logo-4.png" alt="" class="account-deposit-payments-item__logo">
+                                        <span class="account-deposit-payments-item__info">
+                                            <span class="account-deposit-payments-item__title ui-text ui-text--weight-700 ui-text--size-xs">CryptoBot</span>
+                                            <span class="account-deposit-payments-item__limits">
+                                                <span class="account-deposit-payments-item__limit ui-text ui-text--weight-500 ui-text--size-xxxs">
+                                                    <span class="account-deposit-payments-item__label">Мин:</span>
+                                                    <span class="account-deposit-payments-item__value">$1</span>
+                                                </span>
+                                                <span class="account-deposit-payments-item__limit ui-text ui-text--weight-500 ui-text--size-xxxs">
+                                                    <span class="account-deposit-payments-item__label">Макс:</span>
+                                                    <span class="account-deposit-payments-item__value">$10000</span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </label>
+                                <label class="account-deposit-payments-item">
+                                    <input type="radio" name="payments" value="Telegram Stars" checked="">
+                                    <span class="account-deposit-payments-item__group">
+                                        <img src="../img/png/payments-logo-5.png" alt="" class="account-deposit-payments-item__logo">
+                                        <span class="account-deposit-payments-item__info">
+                                            <span class="account-deposit-payments-item__title ui-text ui-text--weight-700 ui-text--size-xs">Telegram Stars</span>
+                                            <span class="account-deposit-payments-item__limits">
+                                                <span class="account-deposit-payments-item__limit ui-text ui-text--weight-500 ui-text--size-xxxs">
+                                                    <span class="account-deposit-payments-item__label">Мин:</span>
+                                                    <span class="account-deposit-payments-item__value">$1</span>
+                                                </span>
+                                                <span class="account-deposit-payments-item__limit ui-text ui-text--weight-500 ui-text--size-xxxs">
+                                                    <span class="account-deposit-payments-item__label">Макс:</span>
+                                                    <span class="account-deposit-payments-item__value">$10000</span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </label>
+                                <label class="account-deposit-payments-item">
+                                    <input type="radio" name="payments" value="International Card (Telegram Stars)" checked="">
+                                    <span class="account-deposit-payments-item__group">
+                                        <img src="../img/png/payments-logo-6.png" alt="" class="account-deposit-payments-item__logo">
+                                        <span class="account-deposit-payments-item__info">
+                                            <span class="account-deposit-payments-item__title ui-text ui-text--weight-700 ui-text--size-xs">International Card (Telegram Stars)</span>
+                                            <span class="account-deposit-payments-item__limits">
+                                                <span class="account-deposit-payments-item__limit ui-text ui-text--weight-500 ui-text--size-xxxs">
+                                                    <span class="account-deposit-payments-item__label">Мин:</span>
+                                                    <span class="account-deposit-payments-item__value">$1</span>
+                                                </span>
+                                                <span class="account-deposit-payments-item__limit ui-text ui-text--weight-500 ui-text--size-xxxs">
+                                                    <span class="account-deposit-payments-item__label">Макс:</span>
+                                                    <span class="account-deposit-payments-item__value">$10000</span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <button class="account-deposit__btn button-main button-main--theme-primary">
+                            <span class="ui-text ui-text--weight-700 ui-text--size-xs">Перейти к оплате</span>
+                        </button>
+                    </div>
+                    <div class="account-deposit__aside">
+                        <div class="account-deposit-transactions">
+                            <div class="account-deposit-transactions__head">
+                                <h2 class="account-deposit-transactions__title ui-text ui-text--weight-700 ui-text--size-l">Операции</h2>
+                                <a href="#" class="account-deposit-transactions__link ui-text ui-text--weight-500 ui-text--size-xxxs">Выгрузить CSV</a>
+                            </div>
+                            <div class="account-deposit-transactions__list">
+                                <div class="account-deposit-transactions-item">
+                                    <div class="account-deposit-transactions-item__icon">
+                                        <svg width="28" height="28">
+                                            <use xlink:href="./img/sprites.svg#icon-wallet"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="account-deposit-transactions-item__info">
+                                        <p class="account-deposit-transactions-item__title ui-text ui-text--weight-500 ui-text--size-xs">Processing</p>
+                                        <div class="account-deposit-transactions-item__date ui-text ui-text--weight-500">24.02.2026 12:40</div>
+                                    </div>
+                                    <div class="account-deposit-transactions-item__right">
+                                        <p class="account-deposit-transactions-item__value ui-text ui-text--weight-700 ui-text--size-xs">+2.9 USD</p>
+                                        <p class="account-deposit-transactions-item__status ui-text ui-text--weight-500 account-deposit-transactions-item__status--completed">✅ Успех</p>
+                                    </div>
+                                </div>
+                                <div class="account-deposit-transactions-item">
+                                    <div class="account-deposit-transactions-item__icon">
+                                        <svg width="28" height="28">
+                                            <use xlink:href="./img/sprites.svg#icon-wallet"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="account-deposit-transactions-item__info">
+                                        <p class="account-deposit-transactions-item__title ui-text ui-text--weight-500 ui-text--size-xs">Processing</p>
+                                        <div class="account-deposit-transactions-item__date ui-text ui-text--weight-500">24.02.2026 12:40</div>
+                                    </div>
+                                    <div class="account-deposit-transactions-item__right">
+                                        <p class="account-deposit-transactions-item__value ui-text ui-text--weight-700 ui-text--size-xs">+2.9 USD</p>
+                                        <p class="account-deposit-transactions-item__status ui-text ui-text--weight-500 account-deposit-transactions-item__status--completed">✅ Успех</p>
+                                    </div>
+                                </div>
+                                <div class="account-deposit-transactions-item">
+                                    <div class="account-deposit-transactions-item__icon">
+                                        <svg width="28" height="28">
+                                            <use xlink:href="./img/sprites.svg#icon-wallet"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="account-deposit-transactions-item__info">
+                                        <p class="account-deposit-transactions-item__title ui-text ui-text--weight-500 ui-text--size-xs">Processing</p>
+                                        <div class="account-deposit-transactions-item__date ui-text ui-text--weight-500">24.02.2026 12:40</div>
+                                    </div>
+                                    <div class="account-deposit-transactions-item__right">
+                                        <p class="account-deposit-transactions-item__value ui-text ui-text--weight-700 ui-text--size-xs">+2.9 USD</p>
+                                        <p class="account-deposit-transactions-item__status ui-text ui-text--weight-500 account-deposit-transactions-item__status--completed">✅ Успех</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="account-deposit-transactions__btn button-main button-main--theme-transparent">
+                                <span class="ui-text ui-text--weight-700 ui-text--size-s">Перейти ко всем оплатам</span>
+                            </button>
+                        </div>
+                        <div class="account-deposit-info" data-da=".account-deposit__content,1025,3">
+                            <h2 class="account-deposit-info__title ui-text ui-text--weight-700 ui-text--size-xs">Дополнительная информация</h2>
+                            <p class="account-deposit-info__description ui-text ui-text--weight-500 ui-text--size-xxs">Минимальный платёж - 3$, СБП по QR - от 300 ₽, перевод по СБП - от 850 ₽, по номеру карты (TJ) - от 100 ₽.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@@include('./common/footer.html')

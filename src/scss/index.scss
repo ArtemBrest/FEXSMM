@@ -5173,6 +5173,327 @@ button:hover {
   }
 }
 
+.account-deposit {
+  display: grid;
+  grid-template-columns: 1fr 285px;
+  gap: 20px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  &__content {
+    display: grid;
+    gap: 40px;
+    padding: 28px;
+    border-radius: var(--border-radius--size-xl);
+    background-color: var(--color-text-inverse);
+
+    @media (max-width: 1024px) {
+      padding: 32px 20px;
+      gap: 32px;
+    }
+  }
+
+  &__aside {
+    display: grid;
+    gap: 20px;
+    height: fit-content;
+  }
+
+  &__btn {
+    width: 100%;
+  }
+}
+
+.account-deposit-banner {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-direction: column;
+  min-height: 170px;
+  padding: 28px;
+  color: var(--color-text-inverse);
+  background-image: var(--gradient-primary-deep);
+  border-radius: var(--border-radius--size-xl);
+
+  &__img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    @media (max-width: 576px) {
+      right: -70px;
+      width: 200px;
+    }
+  }
+
+  &__text {
+    @media (max-width: 1024px) {
+      max-width: 170px;
+    }
+    b {
+      font-weight: 700;
+      color: var(--color-accent-secondary);
+    }
+  }
+}
+
+.account-deposit-amount {
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__field {
+    display: flex;
+    align-items: center;
+    border-radius: var(--border-radius--size-xl);
+    border: 1px solid var(--color-bg-tertiary);
+    padding: 15px 16px;
+    margin-bottom: 12px;
+  }
+
+  &__input {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    flex-grow: 1;
+    height: 100%;
+
+    &::placeholder {
+      color: var(--color-bg-tertiary);
+    }
+  }
+
+  &__currency {
+    flex-shrink: 0;
+    color: var(--color-accent-primary);
+    margin-left: 8px;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    border-radius: var(--border-radius--size-xl);
+    background-color: var(--color-bg-primary);
+    flex: 1 1 100%;
+
+    &--is-active {
+      background-color: var(--color-accent-primary);
+      color: var(--color-text-inverse);
+    }
+  }
+}
+
+.account-deposit-payments {
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.account-deposit-payments-item {
+  $self: &;
+
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  width: 100%;
+
+  &__group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: var(--border-radius--size-xl);
+    padding: 12px;
+    height: 82px;
+    flex-grow: 1;
+    border: 1px solid var(--color-bg-tertiary);
+    background-color: var(--color-text-inverse);
+    cursor: pointer;
+    transition: background-color 0.1s, border-color 0.1s;
+  }
+
+  &__logo {
+    width: 58px;
+    height: 58px;
+    flex-shrink: 0;
+  }
+
+  &__info {
+    display: grid;
+    gap: 12px;
+  }
+
+  &__limits {
+    display: flex;
+    gap: 12px;
+  }
+
+  &__limit {
+    flex-shrink: 0;
+  }
+
+  &__label {
+    color: Hsla(var(--color-text-primary-hsl), 0.4);
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+
+    &:checked ~ #{$self}__group {
+      border-color: var(--color-accent-primary);
+      background-color: var(--color-bg-secondary);
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-image: url("../img/svg/check-full.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+}
+
+.account-deposit-transactions {
+  padding: 28px;
+  border-radius: var(--border-radius--size-xl);
+  background-color: var(--color-text-inverse);
+
+  &__head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+
+  &__link {
+    color: var(--color-accent-primary);
+  }
+
+  &__list {
+    display: grid;
+    gap: 12px;
+  }
+
+  &__btn {
+    display: none;
+    --button-main-y: 20px;
+    --button-main-x: 5px;
+
+    min-height: 60px;
+
+    @media (max-width: 1024px) {
+      display: flex;
+      width: 100%;
+      margin-top: 32px;
+    }
+  }
+}
+
+.account-deposit-transactions-item {
+  display: flex;
+  gap: 12px;
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--border-radius--size-xl);
+    background-color: var(--color-bg-secondary);
+    color: var(--color-accent-primary);
+  }
+
+  &__info,
+  &__right {
+    display: grid;
+    gap: 8px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+
+  &__right {
+    margin-left: auto;
+  }
+
+  &__status,
+  &__date {
+    font-size: 9px;
+    line-height: 9px;
+  }
+
+  &__status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50em;
+    padding: 4px 8px;
+
+    &--completed {
+      background-color: #EDF9EF;
+    }
+    &--progress {
+      background-color: #EAF0FF;
+    }
+    &--partially {
+      background-color: #FFF0EB;
+    }
+    &--waiting {
+      background-color: #F0F5FF;
+    }
+    &--canceled {
+      background-color: #FFE9E9;
+    }
+  }
+}
+
+.account-deposit-info {
+  padding: 28px;
+  border-radius: var(--border-radius--size-xl);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-accent-primary);
+
+  &__title {
+    color: var(--color-accent-primary);
+    margin-bottom: 12px;
+  }
+
+  &__description {
+    color: var(--color-text-muted);
+  }
+}
+
 .account-referral {
   &__advantages {
     display: grid;
