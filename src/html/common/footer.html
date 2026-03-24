@@ -98,29 +98,103 @@
 <div class="modal">
     <div class="modal__head">
         <button class="modal__close">
-            <svg width="16" height="16" class="modal__close__icon">
+            <svg width="28" height="28">
                 <use xlink:href="../img/sprites.svg#icon-close"></use>
             </svg>
         </button>
     </div>
+    <h2 class="modal__title ui-text ui-text--weight-700 ui-text--size-xxl">Помощь по заказу</h2>
     <div class="modal__wrapper">
-        <form class="modal__form modal-form">
-            <h2 class="modal-form__title h2">Оставьте заявку</h2>
-            <p class="modal-form__text">Наш менеджер свяжется с вами</p>
-            <div class="modal-form__group">
-                <label class="modal-form__item">
-                    <input type="text" name="name" class="modal-form__input modal-form__input--name" placeholder="Имя">
-                </label>
-                <label class="modal-form__item">
-                    <input type="text" name="phone" class="modal-form__input modal-form__input--phone"
-                           placeholder="Телефон">
-                </label>
+        <div id="timer-modal">
+            <div class="timer-modal">
+                <div id="timer-count" class="timer-modal__count ui-text ui-text--weight-700"></div>
+                <p class="timer-modal__text">Бесплатные услуги выполняются в порядке очереди. Пожалуйста, подождите немного. </p>
             </div>
-            <div class="modal-form__bottom">
-                <button class="modal-form__btn button-main button-main--theme-primary">Оставить заявку</button>
-                <span class="modal-form__accept">Я согласен(на) с условиями <a href="#" target="_blank">пользовательского соглашения</a></span>
-            </div>
-        </form>
+        </div>
+        <div id="create-order-modal">
+            <form class="create-order-modal">
+                <div class="create-order-modal__wrapper">
+                    <div class="create-order-modal__item">
+                        <label for="create-order-modal-link" class="create-order-modal__label ui-text ui-text--uppercase ui-text--weight-500 ui-text--size-xxxs">Ссылка</label>
+                        <input id="create-order-modal-link" name="link" type="text" placeholder="https://t.me/channelname/123" class="create-order-modal__input">
+                        <p class="create-order-modal__notice ui-text ui-text--weight-500 ui-text--size-xxxs">*укажите ссылку на Telegram-пост или канал, куда нужно добавить просмотры</p>
+                    </div>
+                    <div class="create-order-modal__item">
+                        <label for="create-order-modal-count" class="create-order-modal__label ui-text ui-text--uppercase ui-text--weight-500 ui-text--size-xxxs">Количество просмотров</label>
+                        <input id="create-order-modal-count" name="count" type="text" value="100" class="create-order-modal__input">
+                        <div class="create-order-modal__icon">
+                            <svg>
+                                <use xlink:href="./img/sprites.svg#icon-check-v2"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <button class="create-order-modal__btn button-main button-main--theme-primary">
+                        <span class="ui-text ui-text--weight-700 ui-text--size-xs">Отправить</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div id="support-order-modal">
+            <form class="support-order-modal">
+                <div class="support-order-modal__wrapper">
+                    <div class="support-order-modal__item">
+                        <label for="support-order-modal-message" class="support-order-modal__label ui-text ui-text--uppercase ui-text--weight-500 ui-text--size-xxxs">Ваш вопрос</label>
+                        <textarea name="message" id="support-order-modal-message" placeholder="Введите Ваш вопрос" class="support-order-modal__textarea ui-text ui-text--weight-500 ui-text--size-xs"></textarea>
+                    </div>
+                    <button class="support-order-modal__btn button-main button-main--theme-primary">
+                        <span class="ui-text ui-text--weight-700 ui-text--size-xs">Отправить</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div id="review-modal">
+            <form class="review-modal">
+                <div class="review-modal__wrapper">
+                    <div class="review-modal__item">
+                        <label for="rating-5" class="review-modal__label ui-text ui-text--uppercase ui-text--weight-500 ui-text--size-xxxs">Ваша оценка</label>
+                        <div class="stars">
+                            <input name="rating" id="rating-5" value="5" type="radio">
+                            <label for="rating-5">
+                                <svg width="40" height="40">
+                                    <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                </svg>
+                            </label>
+                            <input name="rating" id="rating-4" value="4" type="radio">
+                            <label for="rating-4">
+                                <svg width="40" height="40">
+                                    <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                </svg>
+                            </label>
+                            <input name="rating" id="rating-3" value="3" type="radio">
+                            <label for="rating-3">
+                                <svg width="40" height="40">
+                                    <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                </svg>
+                            </label>
+                            <input name="rating" id="rating-2" value="2" type="radio">
+                            <label for="rating-2">
+                                <svg width="40" height="40">
+                                    <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                </svg>
+                            </label>
+                            <input name="rating" id="rating-1" value="1" type="radio">
+                            <label for="rating-1">
+                                <svg width="40" height="40">
+                                    <use xlink:href="./img/sprites.svg#icon-star"></use>
+                                </svg>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="review-modal__item">
+                        <label for="review-modal-message" class="review-modal__label ui-text ui-text--uppercase ui-text--weight-500 ui-text--size-xxxs">Ваш вопрос</label>
+                        <textarea name="message" id="review-modal-message" placeholder="Введите Ваш отзыв" class="review-modal__textarea ui-text ui-text--weight-500 ui-text--size-xs"></textarea>
+                    </div>
+                    <button class="review-modal__btn button-main button-main--theme-primary">
+                        <span class="ui-text ui-text--weight-700 ui-text--size-xs">Отправить</span>
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 <button class="button-up">

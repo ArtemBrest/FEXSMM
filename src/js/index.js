@@ -31,6 +31,52 @@ function isEmptyObject(obj) {
     return true;
 }
 
+function parseTimer(value) {
+    if (!value) return 0;
+
+    // 1. Если это чисто число (timestamp или секунды)
+    if (!isNaN(value)) {
+        value = Number(value);
+
+        // если похоже на timestamp (больше 10 цифр)
+        if (value > 1e10) {
+            return Math.max(0, Math.floor((value - Date.now()) / 1000));
+        }
+
+        // если секунды
+        return value;
+    }
+
+    // 2. Если формат HH:MM:SS или MM:SS
+    if (value.includes(":")) {
+        const parts = value.split(":").map(Number);
+
+        if (parts.length === 3) {
+            return parts[0] * 3600 + parts[1] * 60 + parts[2];
+        }
+
+        if (parts.length === 2) {
+            return parts[0] * 60 + parts[1];
+        }
+    }
+
+    // 3. Если это дата (ISO или строка)
+    const date = new Date(value);
+    if (!isNaN(date.getTime())) {
+        return Math.max(0, Math.floor((date.getTime() - Date.now()) / 1000));
+    }
+
+    return 0;
+}
+
+function formatTime(seconds) {
+    const h = String(Math.floor(seconds / 3600)).padStart(2, "0");
+    const m = String(Math.floor((seconds % 3600) / 60)).padStart(2, "0");
+    const s = String(seconds % 60).padStart(2, "0");
+
+    return `${h}:${m}:${s}`;
+}
+
 window.addEventListener("load", function () {
     const body = document.querySelector("body");
     const headerBtnOpen = document.querySelector(".header__btn");
@@ -405,34 +451,76 @@ window.addEventListener("load", function () {
         });
     }
 
-    /*const anchorLinks = (id) => {
-        const point = document.querySelector(id);
-        if (!point) return;
-        point.scrollIntoView({
-            behavior: "smooth",
-        });
-    };
-
-    document.querySelectorAll('a[href^="#"]').forEach((link) =>
-        link.addEventListener("click", function (e) {
-            e.preventDefault();
-            const id = e.currentTarget.getAttribute("href");
-            anchorLinks(id);
-        })
-    );*/
-
-    /*const modalOpenBtn = document.querySelectorAll(".modal-open-btn");
+    const modalOpenBtn = document.querySelectorAll(".modal-open-btn");
     const modalCloseBtn = document.querySelector(".modal__close");
     const modalFade = document.querySelector(".fade");
     const modal = document.querySelector(".modal");
+    const modalTitle = modal.querySelector(".modal__title");
+    const forms = modal.querySelectorAll(".modal__wrapper > div");
+
+    const timerModal = modal.querySelector("#timer-modal"); // блок таймера
+    const timerCountEl = modal.querySelector("#timer-count"); // место, где показывается время
+    let timerInterval = null; // интервал таймера
+
+    function startTimerModal(seconds, callback) {
+        let timeLeft = seconds;
+
+        // если таймер уже был, сбрасываем
+        if (timerInterval) clearInterval(timerInterval);
+
+        // скрываем все формы (по твоей логике)
+        forms.forEach(f => fadeOut(f));
+
+        // показываем таймерную модалку и затем всю модалку
+        fadeIn(timerModal);
+        fadeIn(modalFade);
+        fadeIn(modal);
+        body.classList.add("body--no-scroll");
+
+        // сразу обновляем таймер на экране
+        timerCountEl.textContent = formatTime(timeLeft);
+
+        timerInterval = setInterval(() => {
+            timeLeft--;
+            timerCountEl.textContent = formatTime(timeLeft);
+
+            if (timeLeft <= 0) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+                fadeOut(timerModal); // скрываем таймерную модалку
+                setTimeout(() => callback(), 200); // после таймера открываем форму
+            }
+        }, 1000);
+    }
+
     if (!isEmptyObject(modalOpenBtn)) {
         modalOpenBtn.forEach(function (el) {
             el.addEventListener("click", function (event) {
                 event.preventDefault();
+
+                const data = el.dataset.form;
+                if (!data) return;
+
+                const [formId, title] = data.split(",");
+                const activeForm = modal.querySelector(formId);
+                if (!activeForm) return;
+
+                forms.forEach(form => {
+                    if (form !== activeForm && form.style.display !== "none") {
+                        fadeOut(form);
+                    }
+                });
+
+                fadeIn(activeForm);
+
+                if (title) {
+                    modalTitle.textContent = title;
+                }
+
                 fadeIn(modalFade);
                 fadeIn(modal);
                 body.classList.add("body--no-scroll");
-            })
+            });
         });
     }
     modalCloseBtn.addEventListener("click", function (event) {
@@ -441,13 +529,12 @@ window.addEventListener("load", function () {
         fadeOut(modal);
         body.classList.remove("body--no-scroll");
     });
-
     modalFade.addEventListener("click", function (event) {
         event.preventDefault();
         fadeOut(modalFade);
         fadeOut(modal);
         body.classList.remove("body--no-scroll");
-    });*/
+    });
 
     const depositBlocks = document.querySelectorAll('.account-deposit-amount');
     if (!isEmptyObject(depositBlocks)) {
