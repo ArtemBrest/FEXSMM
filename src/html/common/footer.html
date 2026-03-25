@@ -94,8 +94,8 @@
         <p class="footer__copyright ui-text ui-text--weight-500 ui-text--size-xxs">© 2026 Все права защищены</p>
     </div>
 </footer>
-<div class="fade"></div>
-<div class="modal">
+<div class="fade" style="display: none"></div>
+<div class="modal" style="display: none">
     <div class="modal__head">
         <button class="modal__close">
             <svg width="28" height="28">
@@ -105,12 +105,6 @@
     </div>
     <h2 class="modal__title ui-text ui-text--weight-700 ui-text--size-xxl">Помощь по заказу</h2>
     <div class="modal__wrapper">
-        <div id="timer-modal">
-            <div class="timer-modal">
-                <div id="timer-count" class="timer-modal__count ui-text ui-text--weight-700"></div>
-                <p class="timer-modal__text">Бесплатные услуги выполняются в порядке очереди. Пожалуйста, подождите немного. </p>
-            </div>
-        </div>
         <div id="create-order-modal">
             <form class="create-order-modal">
                 <div class="create-order-modal__wrapper">
@@ -195,6 +189,14 @@
                 </div>
             </form>
         </div>
+    </div>
+</div>
+<div class="modal-timer" id="timer-modal" style="display: none">
+    <div class="modal-timer__wrapper">
+        <p class="modal-timer__title ui-text ui-text--weight-700 ui-text--size-xxl">Ожидание очереди</p>
+        <div class="modal-timer__count ui-text ui-text--weight-700" id="timer-count"></div>
+        <p class="modal-timer__text ui-text ui-text--weight-500 ui-text--size-s">Бесплатные услуги выполняются в порядке очереди. Пожалуйста, подождите немного.</p>
+        <img src="../img/png/smile.png" alt="" class="modal-timer__img">
     </div>
 </div>
 <button class="button-up">

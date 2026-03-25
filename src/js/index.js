@@ -98,6 +98,132 @@ window.addEventListener("load", function () {
         })
     }
 
+    const modalOpenBtn = document.querySelectorAll(".modal-open-btn");
+    const modalCloseBtn = document.querySelector(".modal__close");
+    const modalFade = document.querySelector(".fade");
+    const modal = document.querySelector(".modal");
+    const modalTitle = modal.querySelector(".modal__title");
+    const forms = modal.querySelectorAll(".modal__wrapper > div");
+
+    const waitModal = document.querySelector("#timer-modal"); // модалка ожидания
+    const waitTimerEl = document.querySelector("#timer-count"); // элемент таймера
+    let waitInterval = null;
+
+    if (!isEmptyObject(modalOpenBtn)) {
+        modalOpenBtn.forEach(function (el) {
+            el.addEventListener("click", function (event) {
+                event.preventDefault();
+
+                const data = el.dataset.form;
+                if (!data) return;
+
+                const [formId, title] = data.split(",");
+
+                const timerValue = el.dataset.timer; // получаем таймер из кнопки
+                if (timerValue) {
+                    // если таймер указан — показываем модалку ожидания
+                    fadeIn(waitModal);
+                    fadeIn(modalFade);
+                    body.classList.add("body--no-scroll");
+
+                    let seconds = parseTimer(timerValue);
+                    waitTimerEl.textContent = formatTime(seconds);
+
+                    if (waitInterval) clearInterval(waitInterval);
+
+                    waitInterval = setInterval(() => {
+                        seconds--;
+                        waitTimerEl.textContent = formatTime(seconds);
+
+                        if (seconds <= 0) {
+                            clearInterval(waitInterval);
+                            fadeOut(waitModal);
+
+                            // затем открываем основную модалку
+                            const activeForm = modal.querySelector(formId);
+                            if (!activeForm) return;
+
+                            forms.forEach(form => {
+                                if (form !== activeForm && form.style.display !== "none") {
+                                    fadeOut(form);
+                                }
+                            });
+
+                            fadeIn(activeForm);
+
+                            if (title) {
+                                modalTitle.textContent = title;
+                            }
+                            fadeIn(modalFade);
+                            fadeIn(modal);
+                        }
+                    }, 1000);
+
+                    return; // прерываем дальнейшее выполнение, основная модалка откроется через таймер
+                }
+
+                // текущая логика без таймера
+                const activeForm = modal.querySelector(formId);
+                if (!activeForm) return;
+
+                forms.forEach(form => {
+                    if (form !== activeForm && form.style.display !== "none") {
+                        fadeOut(form);
+                    }
+                });
+
+                fadeIn(activeForm);
+
+                if (title) {
+                    modalTitle.textContent = title;
+                }
+
+                fadeIn(modalFade);
+                fadeIn(modal);
+                body.classList.add("body--no-scroll");
+            });
+        });
+    }
+    modalCloseBtn.addEventListener("click", function (event) {
+        event.preventDefault();
+        fadeOut(modalFade);
+        fadeOut(modal);
+        body.classList.remove("body--no-scroll");
+    });
+    modalFade.addEventListener("click", function (event) {
+        event.preventDefault();
+        if (modal.style.display !== "none") {
+            fadeOut(modalFade);
+            fadeOut(modal);
+            body.classList.remove("body--no-scroll");
+        }
+    });
+
+    const scrollToTopBtn = document.querySelector(".button-up");
+    if (scrollToTopBtn !== null) {
+        document.addEventListener("scroll", handleScroll);
+
+        function handleScroll() {
+            let scrollableHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let GOLDEN_RATIO = 0.2;
+
+            if ((document.documentElement.scrollTop / scrollableHeight) > GOLDEN_RATIO) {
+                scrollToTopBtn.style.opacity = "1";
+            } else {
+                scrollToTopBtn.style.opacity = "0";
+            }
+        }
+
+        scrollToTopBtn.addEventListener("click", scrollToTop);
+    }
+
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+
     const bannerVideo = document.querySelector(".banner-video");
     if (bannerVideo !== null) {
         lightGallery(bannerVideo, {
@@ -195,7 +321,6 @@ window.addEventListener("load", function () {
     }
 
     const calcFeeds = document.querySelectorAll('.calc-feed');
-
     if(!isEmptyObject(calcFeeds)) {
         calcFeeds.forEach(feed => {
             const checkbox = feed.querySelector('.calc-feed__input');
@@ -362,7 +487,6 @@ window.addEventListener("load", function () {
 
     const singleContent = document.getElementById('single-page-content');
     const introContainer = document.getElementById('single-page-intro-list');
-
     if (singleContent !== null || introContainer !== null) {
         const headings = singleContent.querySelectorAll('h2, h3');
         if (!headings.length) return;
@@ -425,116 +549,6 @@ window.addEventListener("load", function () {
 
         introContainer.appendChild(rootOl);
     }
-
-    const scrollToTopBtn = document.querySelector(".button-up");
-    if (scrollToTopBtn !== null) {
-        document.addEventListener("scroll", handleScroll);
-
-        function handleScroll() {
-            let scrollableHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            let GOLDEN_RATIO = 0.2;
-
-            if ((document.documentElement.scrollTop / scrollableHeight) > GOLDEN_RATIO) {
-                scrollToTopBtn.style.opacity = "1";
-            } else {
-                scrollToTopBtn.style.opacity = "0";
-            }
-        }
-
-        scrollToTopBtn.addEventListener("click", scrollToTop);
-    }
-
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-    }
-
-    const modalOpenBtn = document.querySelectorAll(".modal-open-btn");
-    const modalCloseBtn = document.querySelector(".modal__close");
-    const modalFade = document.querySelector(".fade");
-    const modal = document.querySelector(".modal");
-    const modalTitle = modal.querySelector(".modal__title");
-    const forms = modal.querySelectorAll(".modal__wrapper > div");
-
-    const timerModal = modal.querySelector("#timer-modal"); // блок таймера
-    const timerCountEl = modal.querySelector("#timer-count"); // место, где показывается время
-    let timerInterval = null; // интервал таймера
-
-    function startTimerModal(seconds, callback) {
-        let timeLeft = seconds;
-
-        // если таймер уже был, сбрасываем
-        if (timerInterval) clearInterval(timerInterval);
-
-        // скрываем все формы (по твоей логике)
-        forms.forEach(f => fadeOut(f));
-
-        // показываем таймерную модалку и затем всю модалку
-        fadeIn(timerModal);
-        fadeIn(modalFade);
-        fadeIn(modal);
-        body.classList.add("body--no-scroll");
-
-        // сразу обновляем таймер на экране
-        timerCountEl.textContent = formatTime(timeLeft);
-
-        timerInterval = setInterval(() => {
-            timeLeft--;
-            timerCountEl.textContent = formatTime(timeLeft);
-
-            if (timeLeft <= 0) {
-                clearInterval(timerInterval);
-                timerInterval = null;
-                fadeOut(timerModal); // скрываем таймерную модалку
-                setTimeout(() => callback(), 200); // после таймера открываем форму
-            }
-        }, 1000);
-    }
-
-    if (!isEmptyObject(modalOpenBtn)) {
-        modalOpenBtn.forEach(function (el) {
-            el.addEventListener("click", function (event) {
-                event.preventDefault();
-
-                const data = el.dataset.form;
-                if (!data) return;
-
-                const [formId, title] = data.split(",");
-                const activeForm = modal.querySelector(formId);
-                if (!activeForm) return;
-
-                forms.forEach(form => {
-                    if (form !== activeForm && form.style.display !== "none") {
-                        fadeOut(form);
-                    }
-                });
-
-                fadeIn(activeForm);
-
-                if (title) {
-                    modalTitle.textContent = title;
-                }
-
-                fadeIn(modalFade);
-                fadeIn(modal);
-                body.classList.add("body--no-scroll");
-            });
-        });
-    }
-    modalCloseBtn.addEventListener("click", function (event) {
-        event.preventDefault();
-        fadeOut(modalFade);
-        fadeOut(modal);
-        body.classList.remove("body--no-scroll");
-    });
-    modalFade.addEventListener("click", function (event) {
-        event.preventDefault();
-        fadeOut(modalFade);
-        fadeOut(modal);
-        body.classList.remove("body--no-scroll");
-    });
 
     const depositBlocks = document.querySelectorAll('.account-deposit-amount');
     if (!isEmptyObject(depositBlocks)) {
@@ -630,7 +644,6 @@ window.addEventListener("load", function () {
             tooltip.classList.remove('copy-tooltip--is-active');
         }, 1500);
     }
-
 
     const passwordToggles = document.querySelectorAll('.auth-form__visible');
     if (!isEmptyObject(passwordToggles)) {

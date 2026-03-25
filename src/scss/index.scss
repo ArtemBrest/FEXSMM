@@ -6347,6 +6347,75 @@ button:hover {
   }
 }
 
+.modal-timer {
+  display: none;
+  position: fixed;
+  z-index: 100000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: var(--border-radius--size-xxl);
+  background-color: var(--color-text-inverse);
+  max-width: 520px;
+  width: 100%;
+  padding: 60px;
+
+  @media (max-width: 1024px) {
+    padding: 48px 20px;
+  }
+
+  @media (max-width: 576px) {
+    width: 90vw;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__title,
+  &__count {
+    margin-bottom: 46px;
+
+    @media (max-width: 1024px) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__count {
+    color: var(--color-accent-primary);
+    font-size: 80px;
+    line-height: 80px;
+
+    @media (max-width: 1024px) {
+      font-size: 60px;
+      line-height: 60px;
+    }
+  }
+
+  &__text {
+    color: var(--color-text-muted);
+    margin-bottom: 32px;
+
+    @media (max-width: 1024px) {
+      font-size: 12px;
+      line-height: 12px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__img {
+    width: 60px;
+    height: auto;
+
+    @media (max-width: 1024px) {
+      width: 48px;
+    }
+  }
+}
+
 .stars {
   height: 40px;
   width: fit-content;
