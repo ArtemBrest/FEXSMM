@@ -34,7 +34,7 @@
                 <li class="header-menu__li"><a href="#" class="header-menu__link ui-text ui-text--size-xs ui-text--uppercase">API</a></li>
                 <li class="header-menu__li"><a href="#" class="header-menu__link ui-text ui-text--size-xs ui-text--uppercase">Блог</a></li>
             </ul>
-            <div class="header__actions header-actions">
+            <div class="header__actions header-actions" style="display: none">
                 <button class="header-actions__btn header-actions__btn--deposit">
                     <span class="ui-text ui-text--weight-700 ui-text--size-xxs">пополнить баланс</span>
                 </button>
@@ -47,7 +47,7 @@
                     </svg>
                 </a>
             </div>
-            <div class="header__auth" style="display: none">
+            <div class="header__auth">
                 <div class="header__wallet header-wallet">
                     <div class="header-wallet__box">
                         <svg class="header-wallet__icon">
@@ -70,88 +70,374 @@
                     </svg>
                     <span class="header-notifications__count ui-text ui-text--weight-500 ui-text--size-xxxs">5</span>
                 </div>
-                <a href="#" class="header__account header-account">
+                <div class="header__account header-account header-account--has-menu" data-title="Личный кабинет">
                     <svg class="header-account__icon">
                         <use xlink:href="./img/sprites.svg#icon-user"></use>
                     </svg>
-                </a>
+                    <div class="header-account__wrapper">
+                        <button class="header-account__btn button-main button-main--theme-primary">
+                            <svg width="12" height="12">
+                                <use xlink:href="./img/sprites.svg#icon-add"></use>
+                            </svg>
+                            <span class="ui-text ui-text--weight-700 ui-text--size-xs">создать заказ</span>
+                        </button>
+                        <ul class="header-account-menu" data-da=".header-mob__wrapper,1025,1">
+                            <li class="header-account-menu__li">
+                                <div class="header-account-menu__icon">
+                                    <svg width="24" height="24">
+                                        <use xlink:href="./img/sprites.svg#icon-order"></use>
+                                    </svg>
+                                </div>
+                                <a href="#" class="header-account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Мои
+                                    заказы</a>
+                            </li>
+                            <li class="header-account-menu__li">
+                                <div class="header-account-menu__icon">
+                                    <svg width="24" height="24">
+                                        <use xlink:href="./img/sprites.svg#icon-reload"></use>
+                                    </svg>
+                                </div>
+                                <a href="#" class="header-account-menu__link  ui-text ui-text--weight-500 ui-text--size-s">Автоуслуги</a>
+                            </li>
+                            <li class="header-account-menu__li">
+                                <div class="header-account-menu__icon">
+                                    <svg width="24" height="24">
+                                        <use xlink:href="./img/sprites.svg#icon-list-details"></use>
+                                    </svg>
+                                </div>
+                                <a href="#" class="header-account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Интервальные
+                                    заказы</a>
+                            </li>
+                            <li class="header-account-menu__li">
+                                <div class="header-account-menu__icon">
+                                    <svg width="24" height="24">
+                                        <use xlink:href="./img/sprites.svg#icon-list-details"></use>
+                                    </svg>
+                                </div>
+                                <a href="#" class="header-account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Постепенные
+                                    заказы</a>
+                            </li>
+                            <li class="header-account-menu__li">
+                                <div class="header-account-menu__icon">
+                                    <svg width="24" height="24">
+                                        <use xlink:href="./img/sprites.svg#icon-referral"></use>
+                                    </svg>
+                                </div>
+                                <a href="#" class="header-account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Реф.
+                                    программа</a>
+                            </li>
+                            <li class="header-account-menu__li">
+                                <div class="header-account-menu__icon">
+                                    <svg width="24" height="24">
+                                        <use xlink:href="./img/sprites.svg#icon-notifications"></use>
+                                    </svg>
+                                </div>
+                                <a href="#" class="header-account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Центр
+                                    уведомлений</a>
+                            </li>
+                            <li class="header-account-menu__li">
+                                <div class="header-account-menu__icon">
+                                    <svg width="24" height="24">
+                                        <use xlink:href="./img/sprites.svg#icon-history"></use>
+                                    </svg>
+                                </div>
+                                <a href="#" class="header-account-menu__link ui-text ui-text--weight-500 ui-text--size-s">История
+                                    баланса</a>
+                            </li>
+                            <li class="header-account-menu__li">
+                                <div class="header-account-menu__icon">
+                                    <svg width="24" height="24">
+                                        <use xlink:href="./img/sprites.svg#icon-settings"></use>
+                                    </svg>
+                                </div>
+                                <a href="#"
+                                   class="header-account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Настройки</a>
+                            </li>
+                            <li class="header-account-menu__li">
+                                <div class="header-account-menu__icon">
+                                    <svg width="24" height="24">
+                                        <use xlink:href="./img/sprites.svg#icon-support"></use>
+                                    </svg>
+                                </div>
+                                <a href="#"
+                                   class="header-account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Поддержка</a>
+                            </li>
+                            <li class="header-account-menu__li">
+                                <div class="header-account-menu__icon">
+                                    <svg width="24" height="24">
+                                        <use xlink:href="./img/sprites.svg#icon-logout"></use>
+                                    </svg>
+                                </div>
+                                <a href="#" class="header-account-menu__link ui-text ui-text--weight-500 ui-text--size-s">Выйти</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="header__btn">
+            <button class="header__btn" data-title="Меню">
                 <svg class="header__btn-ico">
                     <use xlink:href="./img/sprites.svg#icon-burger"></use>
                 </svg>
-            </div>
+            </button>
         </div>
         <div class="header__categories header-categories">
             <p class="header-categories__title ui-text ui-text--weight-500 ui-text--size-l">Выбрать услугу:</p>
-            <div class="header-categories__items categories-social-btn">
-                <a href="#" class="category-social-btn category-social-btn--size-m">
-                    <img src="/img/png/youtube.png" alt="youtube" width="28" height="28" class="category-social-btn__icon">
-                </a>
-                <a href="#" class="category-social-btn category-social-btn--size-m">
-                    <img src="/img/png/discord.png" alt="discord" width="28" height="28" class="category-social-btn__icon">
-                </a>
-                <a href="#" class="category-social-btn category-social-btn--size-m">
-                    <img src="/img/png/facebook.png" alt="facebook" width="28" height="28" class="category-social-btn__icon">
-                </a>
-                <a href="#" class="category-social-btn category-social-btn--size-m">
-                    <img src="/img/png/google.png" alt="google" width="28" height="28" class="category-social-btn__icon">
-                </a>
-                <a href="#" class="category-social-btn category-social-btn--size-m">
-                    <img src="/img/png/instagram.png" alt="instagram" width="28" height="28" class="category-social-btn__icon">
-                </a>
-                <a href="#" class="category-social-btn category-social-btn--size-m">
-                    <img src="/img/png/linkedin.png" alt="linkedin" width="28" height="28" class="category-social-btn__icon">
-                </a>
-                <a href="#" class="category-social-btn category-social-btn--size-m">
-                    <img src="/img/png/telegram.png" alt="telegram" width="28" height="28" class="category-social-btn__icon">
-                </a>
-                <a href="#" class="category-social-btn category-social-btn--size-m">
-                    <img src="/img/png/tiktok.png" alt="tiktok" width="28" height="28" class="category-social-btn__icon">
-                </a>
-                <a href="#" class="category-social-btn category-social-btn--size-m">
-                    <img src="/img/png/twitch.png" alt="twitch" width="28" height="28" class="category-social-btn__icon">
-                </a>
-                <a href="#" class="category-social-btn category-social-btn--size-m">
-                    <img src="/img/png/twitter.png" alt="twitter" width="28" height="28" class="category-social-btn__icon">
-                </a>
-                <a href="#" class="category-social-btn category-social-btn--size-m">
-                    <img src="/img/png/vkontakte.png" alt="vkontakte" width="28" height="28" class="category-social-btn__icon">
-                </a>
-                <a href="#" class="category-social-btn category-social-btn--size-m">
-                    <img src="/img/png/raddit.png" alt="raddit" width="28" height="28" class="category-social-btn__icon">
-                </a>
-                <a href="#" class="category-social-btn category-social-btn--size-m">
-                    <img src="/img/png/soundcloud.png" alt="soundcloud" width="28" height="28" class="category-social-btn__icon">
-                </a>
-                <a href="#" class="category-social-btn category-social-btn--size-m">
-                    <svg class="category-social-btn__icon">
-                        <use xlink:href="./img/sprites.svg#icon-more"></use>
-                    </svg>
-                </a>
-            </div>
+            <ul class="header-categories__items header-categories-items categories-social-btn">
+                <li class="header-categories-items__li">
+                    <a href="#" class="header-categories-items__link category-social-btn category-social-btn--size-m">
+                        <img src="/img/png/youtube.png" alt="youtube" width="28" height="28" class="category-social-btn__icon">
+                    </a>
+                    <ul class="header-categories-items__sub header-categories-items-sub">
+                        <li class="header-categories-items-sub__li">
+                            <a href="#" class="header-categories-items-sub__link">
+                                <img src="/img/png/services-tag-icon-1.png" alt="Подписчики" width="12" height="12" class="header-categories-items-sub__icon">
+                                <span class="header-categories-items-sub__title ui-text ui-text--weight-500 ui-text--size-xxs">Подписчики</span>
+                            </a>
+                        </li>
+                        <li class="header-categories-items-sub__li">
+                            <a href="#" class="header-categories-items-sub__link">
+                                <img src="/img/png/services-tag-icon-2.png" alt="Просмотры" width="12" height="12" class="header-categories-items-sub__icon">
+                                <span class="header-categories-items-sub__title ui-text ui-text--weight-500 ui-text--size-xxs">Просмотры</span>
+                            </a>
+                        </li>
+                        <li class="header-categories-items-sub__li">
+                            <a href="#" class="header-categories-items-sub__link">
+                                <img src="/img/png/services-tag-icon-3.png" alt="Реакции" width="12" height="12" class="header-categories-items-sub__icon">
+                                <span class="header-categories-items-sub__title ui-text ui-text--weight-500 ui-text--size-xxs">Реакции</span>
+                            </a>
+                        </li>
+                        <li class="header-categories-items-sub__li">
+                            <a href="#" class="header-categories-items-sub__link">
+                                <img src="/img/png/services-tag-icon-6.png" alt="Комментарии" width="12" height="12" class="header-categories-items-sub__icon">
+                                <span class="header-categories-items-sub__title ui-text ui-text--weight-500 ui-text--size-xxs">Комментарии</span>
+                            </a>
+                        </li>
+                        <li class="header-categories-items-sub__li">
+                            <a href="#" class="header-categories-items-sub__link">
+                                <img src="/img/png/services-tag-icon-4.png" alt="Репосты" width="12" height="12" class="header-categories-items-sub__icon">
+                                <span class="header-categories-items-sub__title ui-text ui-text--weight-500 ui-text--size-xxs">Репосты</span>
+                            </a>
+                        </li>
+                        <li class="header-categories-items-sub__li">
+                            <a href="#" class="header-categories-items-sub__link">
+                                <img src="/img/png/services-tag-icon-7.png" alt="Истории" width="12" height="12" class="header-categories-items-sub__icon">
+                                <span class="header-categories-items-sub__title ui-text ui-text--weight-500 ui-text--size-xxs">Истории</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="header-categories-items__li">
+                    <a href="#" class="header-categories-items__link category-social-btn category-social-btn--size-m">
+                        <img src="/img/png/discord.png" alt="discord" width="28" height="28" class="category-social-btn__icon">
+                    </a>
+                </li>
+                <li class="header-categories-items__li">
+                    <a href="#" class="header-categories-items__link category-social-btn category-social-btn--size-m">
+                        <img src="/img/png/facebook.png" alt="facebook" width="28" height="28" class="category-social-btn__icon">
+                    </a>
+                </li>
+                <li class="header-categories-items__li">
+                    <a href="#" class="header-categories-items__link category-social-btn category-social-btn--size-m">
+                        <img src="/img/png/google.png" alt="google" width="28" height="28" class="category-social-btn__icon">
+                    </a>
+                </li>
+                <li class="header-categories-items__li">
+                    <a href="#" class="header-categories-items__link category-social-btn category-social-btn--size-m">
+                        <img src="/img/png/instagram.png" alt="instagram" width="28" height="28" class="category-social-btn__icon">
+                    </a>
+                </li>
+                <li class="header-categories-items__li">
+                    <a href="#" class="header-categories-items__link category-social-btn category-social-btn--size-m">
+                        <img src="/img/png/linkedin.png" alt="linkedin" width="28" height="28" class="category-social-btn__icon">
+                    </a>
+                </li>
+                <li class="header-categories-items__li">
+                    <a href="#" class="header-categories-items__link category-social-btn category-social-btn--size-m">
+                        <img src="/img/png/telegram.png" alt="telegram" width="28" height="28" class="category-social-btn__icon">
+                    </a>
+                </li>
+                <li class="header-categories-items__li">
+                    <a href="#" class="header-categories-items__link category-social-btn category-social-btn--size-m">
+                        <img src="/img/png/tiktok.png" alt="tiktok" width="28" height="28" class="category-social-btn__icon">
+                    </a>
+                </li>
+                <li class="header-categories-items__li">
+                    <a href="#" class="header-categories-items__link category-social-btn category-social-btn--size-m">
+                        <img src="/img/png/twitch.png" alt="twitch" width="28" height="28" class="category-social-btn__icon">
+                    </a>
+                </li>
+                <li class="header-categories-items__li">
+                    <a href="#" class="header-categories-items__link category-social-btn category-social-btn--size-m">
+                        <img src="/img/png/twitter.png" alt="twitter" width="28" height="28" class="category-social-btn__icon">
+                    </a>
+                </li>
+                <li class="header-categories-items__li">
+                    <a href="#" class="header-categories-items__link category-social-btn category-social-btn--size-m">
+                        <img src="/img/png/vkontakte.png" alt="vkontakte" width="28" height="28" class="category-social-btn__icon">
+                    </a>
+                </li>
+                <li class="header-categories-items__li">
+                    <a href="#" class="header-categories-items__link category-social-btn category-social-btn--size-m">
+                        <img src="/img/png/raddit.png" alt="raddit" width="28" height="28" class="category-social-btn__icon">
+                    </a>
+                </li>
+                <li class="header-categories-items__li">
+                    <a href="#" class="header-categories-items__link category-social-btn category-social-btn--size-m">
+                        <img src="/img/png/soundcloud.png" alt="soundcloud" width="28" height="28" class="category-social-btn__icon">
+                    </a>
+                </li>
+                <li class="header-categories-items__li">
+                    <a href="#" class="header-categories-items__link category-social-btn category-social-btn--size-m">
+                        <svg class="category-social-btn__icon">
+                            <use xlink:href="./img/sprites.svg#icon-more"></use>
+                        </svg>
+                    </a>
+                    <ul class="header-categories-items__sub header-categories-items-sub">
+                        <li class="header-categories-items-sub__li">
+                            <a href="#" class="header-categories-items-sub__link">
+                                <span class="header-categories-items-sub__title ui-text ui-text--weight-500 ui-text--size-xxs">Доп соцсеть 1</span>
+                            </a>
+                        </li>
+                        <li class="header-categories-items-sub__li">
+                            <a href="#" class="header-categories-items-sub__link">
+                                <span class="header-categories-items-sub__title ui-text ui-text--weight-500 ui-text--size-xxs">Доп соцсеть 2</span>
+                            </a>
+                            <ul class="header-categories-items__sub header-categories-items-sub">
+                                <li class="header-categories-items-sub__li">
+                                    <a href="#" class="header-categories-items-sub__link">
+                                        <img src="/img/png/services-tag-icon-1.png" alt="Подписчики" width="12" height="12" class="header-categories-items-sub__icon">
+                                        <span class="header-categories-items-sub__title ui-text ui-text--weight-500 ui-text--size-xxs">Подписчики</span>
+                                    </a>
+                                </li>
+                                <li class="header-categories-items-sub__li">
+                                    <a href="#" class="header-categories-items-sub__link">
+                                        <img src="/img/png/services-tag-icon-2.png" alt="Просмотры" width="12" height="12" class="header-categories-items-sub__icon">
+                                        <span class="header-categories-items-sub__title ui-text ui-text--weight-500 ui-text--size-xxs">Просмотры</span>
+                                    </a>
+                                </li>
+                                <li class="header-categories-items-sub__li">
+                                    <a href="#" class="header-categories-items-sub__link">
+                                        <img src="/img/png/services-tag-icon-3.png" alt="Реакции" width="12" height="12" class="header-categories-items-sub__icon">
+                                        <span class="header-categories-items-sub__title ui-text ui-text--weight-500 ui-text--size-xxs">Реакции</span>
+                                    </a>
+                                </li>
+                                <li class="header-categories-items-sub__li">
+                                    <a href="#" class="header-categories-items-sub__link">
+                                        <img src="/img/png/services-tag-icon-6.png" alt="Комментарии" width="12" height="12" class="header-categories-items-sub__icon">
+                                        <span class="header-categories-items-sub__title ui-text ui-text--weight-500 ui-text--size-xxs">Комментарии</span>
+                                    </a>
+                                </li>
+                                <li class="header-categories-items-sub__li">
+                                    <a href="#" class="header-categories-items-sub__link">
+                                        <img src="/img/png/services-tag-icon-4.png" alt="Репосты" width="12" height="12" class="header-categories-items-sub__icon">
+                                        <span class="header-categories-items-sub__title ui-text ui-text--weight-500 ui-text--size-xxs">Репосты</span>
+                                    </a>
+                                </li>
+                                <li class="header-categories-items-sub__li">
+                                    <a href="#" class="header-categories-items-sub__link">
+                                        <img src="/img/png/services-tag-icon-7.png" alt="Истории" width="12" height="12" class="header-categories-items-sub__icon">
+                                        <span class="header-categories-items-sub__title ui-text ui-text--weight-500 ui-text--size-xxs">Истории</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="header-categories-items-sub__li">
+                            <a href="#" class="header-categories-items-sub__link">
+                                <span class="header-categories-items-sub__title ui-text ui-text--weight-500 ui-text--size-xxs">Доп соцсеть 3</span>
+                            </a>
+                        </li>
+                        <li class="header-categories-items-sub__li">
+                            <a href="#" class="header-categories-items-sub__link">
+                                <span class="header-categories-items-sub__title ui-text ui-text--weight-500 ui-text--size-xxs">Доп соцсеть 4</span>
+                            </a>
+                        </li>
+                        <li class="header-categories-items-sub__li">
+                            <a href="#" class="header-categories-items-sub__link">
+                                <span class="header-categories-items-sub__title ui-text ui-text--weight-500 ui-text--size-xxs">Доп соцсеть 5</span>
+                            </a>
+                        </li>
+                        <li class="header-categories-items-sub__li">
+                            <a href="#" class="header-categories-items-sub__link">
+                                <span class="header-categories-items-sub__title ui-text ui-text--weight-500 ui-text--size-xxs">Доп соцсеть 6</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </div>
     <div class="header-mob">
-        <div class="header-mob__top">
+        <div class="header-mob__head">
             <a href="#" class="header__logo header-logo">
                 <svg class="header-logo__img">
                     <use xlink:href="./img/sprites.svg#logo"></use>
                 </svg>
             </a>
-            <div class="header-mob__btn">
-                <svg class="header-mob__btn-ico">
-                    <use xlink:href="./img/sprites.svg#icon-close"></use>
-                </svg>
+            <div class="header-mob__right">
+                <div class="header__wallet header-wallet">
+                    <div class="header-wallet__box">
+                        <svg class="header-wallet__icon">
+                            <use xlink:href="./img/sprites.svg#icon-wallet"></use>
+                        </svg>
+                    </div>
+                    <div class="header-wallet__info">
+                        <span class="header-wallet__title ui-text ui-text--weight-500 ui-text--size-xs">Баланс</span>
+                        <span class="header-wallet__balance ui-text--weight-700 ui-text--size-l">199.99 $</span>
+                    </div>
+                    <button class="header-wallet__deposit">
+                        <svg class="header-wallet__deposit-ico">
+                            <use xlink:href="./img/sprites.svg#icon-add"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div class="header__notifications header-notifications">
+                    <svg class="header-notifications__icon">
+                        <use xlink:href="./img/sprites.svg#icon-notifications"></use>
+                    </svg>
+                    <span class="header-notifications__count ui-text ui-text--weight-500 ui-text--size-xxxs">5</span>
+                </div>
+                <a href="#" class="header__account header-account" data-title="Личный кабинет">
+                    <svg class="header-account__icon">
+                        <use xlink:href="./img/sprites.svg#icon-user"></use>
+                    </svg>
+                </a>
+                <button class="header-mob__open header__btn" data-title="Меню">
+                    <svg class="header__btn-ico">
+                        <use xlink:href="./img/sprites.svg#icon-burger"></use>
+                    </svg>
+                </button>
+                <button class="header-mob__close">
+                    <svg class="header-mob__close-ico">
+                        <use xlink:href="./img/sprites.svg#icon-close"></use>
+                    </svg>
+                </button>
             </div>
         </div>
+        <p class="header-mob__title ui-text ui-text--weight-700 ui-text--size-xxxl">Меню</p>
         <div class="header-mob__wrapper"></div>
-        <div class="header-mob__column">
-            <div class="header-mob__title ui-text ui-text--weight-500 ui-text--size-l">Контакты</div>
-            <div class="header-mob__contacts">
-                <a href="mailto:info@fexsmm.com" class="header-mob__email ui-text ui-text--weight-500 ui-text--size-s">info@fexsmm.com</a>
-                <a href="https://t.me/@faramanx" class="header-mob__link ui-text ui-text--weight-500 ui-text--size-s">Вступай в наш телеграм-канал</a>
+        <div class="header-mob__footer">
+            <div class="header-mob__wallet header-mob-wallet">
+                <div class="header-mob-wallet__box">
+                    <svg class="header-mob-wallet__icon">
+                        <use xlink:href="./img/sprites.svg#icon-wallet"></use>
+                    </svg>
+                </div>
+                <div class="header-mob-wallet__info">
+                    <span class="header-mob-wallet__title ui-text ui-text--weight-500 ui-text--size-xs">Баланс</span>
+                    <span class="header-mob-wallet__balance ui-text--weight-700 ui-text--size-l">199.99 $</span>
+                </div>
+                <button class="header-mob-wallet__deposit">
+                    <svg class="header-mob-wallet__deposit-ico">
+                        <use xlink:href="./img/sprites.svg#icon-add"></use>
+                    </svg>
+                </button>
             </div>
+            <button class="header-mob__btn button-main button-main--theme-primary">
+                <svg width="12" height="12">
+                    <use xlink:href="./img/sprites.svg#icon-add"></use>
+                </svg>
+                <span class="ui-text ui-text--weight-700 ui-text--size-xs">создать заказ</span>
+            </button>
         </div>
     </div>
 </header>
