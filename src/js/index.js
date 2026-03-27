@@ -78,70 +78,10 @@ function formatTime(seconds) {
 }
 
 window.addEventListener("load", function () {
-    /*const body = document.querySelector("body");
-    const headerAccounts = document.querySelectorAll(".header-account");
-    const headerBtnOpen = document.querySelector(".header__btn");
-    const headerBtnClose = document.querySelector(".header-mob__close");
-    const headerMob = document.querySelector(".header-mob");
-    const headerTitle = headerMob.querySelector(".header-mob__title");
-
-    if (!isEmptyObject(headerAccounts) && headerBtnOpen !== null && headerBtnClose !== null && headerMob !== null) {
-        headerBtnOpen.addEventListener("click", function (e) {
-            e.preventDefault();
-            headerMob.style.display = "flex";
-            headerMob.classList.add("header-mob--active", "header-mob--menu-default");
-            headerMob.classList.remove("header-mob--menu-account");
-            body.classList.add("body--no-scroll");
-
-            // 👉 теперь динамически
-            if (headerTitle && headerBtnOpen.dataset.title) {
-                headerTitle.textContent = headerBtnOpen.dataset.title;
-            }
-        });
-
-        headerBtnClose.addEventListener("click", function (e) {
-            e.preventDefault();
-            headerMob.style.display = "none";
-            headerMob.classList.remove(
-                "header-mob--active",
-                "header-mob--menu-default",
-                "header-mob--menu-account"
-            );
-            body.classList.remove("body--no-scroll");
-        });
-
-        // 👉 обработка header-account
-        if (headerAccounts.length) {
-            headerAccounts.forEach(account => {
-                account.addEventListener("click", function (e) {
-                    e.preventDefault();
-
-                    const isOpen = headerMob.classList.contains("header-mob--active");
-
-                    if (isOpen) {
-                        // меню уже открыто → просто переключаем
-                        headerMob.classList.remove("header-mob--menu-default");
-                        headerMob.classList.add("header-mob--menu-account");
-                    } else {
-                        // меню закрыто → открываем сразу account режим
-                        headerMob.style.display = "flex";
-                        headerMob.classList.add("header-mob--active", "header-mob--menu-account");
-                        headerMob.classList.remove("header-mob--menu-default");
-                        body.classList.add("body--no-scroll");
-                    }
-
-                    // 👉 теперь динамически
-                    if (headerTitle && account.dataset.title) {
-                        headerTitle.textContent = account.dataset.title;
-                    }
-                });
-            });
-        }
-    }*/
-
     const body = document.querySelector("body");
     const headerAccounts = document.querySelectorAll(".header-account");
-    const headerBtns = document.querySelectorAll(".header__btn"); // 👈 теперь несколько
+    const headerNotifications = document.querySelectorAll(".header-notifications");
+    const headerBtns = document.querySelectorAll(".header__btn");
     const headerBtnClose = document.querySelector(".header-mob__close");
     const headerMob = document.querySelector(".header-mob");
     const headerTitle = headerMob?.querySelector(".header-mob__title");
@@ -170,7 +110,7 @@ window.addEventListener("load", function () {
         }
     }
 
-    if (headerMob && headerBtnClose) {
+    if (window.innerWidth <= 1024 && headerMob && headerBtnClose) {
         headerBtns.forEach(btn => {
             btn.addEventListener("click", function (e) {
                 e.preventDefault();
@@ -178,6 +118,17 @@ window.addEventListener("load", function () {
                 openMenu({
                     modifier: btn.dataset.modifier || "header-mob--menu-default",
                     title: btn.dataset.title
+                });
+            });
+        });
+
+        headerNotifications.forEach(account => {
+            account.addEventListener("click", function (e) {
+                e.preventDefault();
+
+                openMenu({
+                    modifier: "header-mob--menu-notifications",
+                    title: account.dataset.title
                 });
             });
         });
